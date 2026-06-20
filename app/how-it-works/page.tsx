@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function HowItWorks() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header />
 
       <section className="bg-slate-900 text-white py-20 px-4">

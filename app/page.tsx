@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header />
 
       {/* Hero Section */}
@@ -66,7 +66,7 @@ export default function Home() {
       </section>
 
       {/* Value Props */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-slate-900 mb-4">
             Why Choose Deooch?
@@ -165,7 +165,7 @@ export default function Home() {
       </section>
 
       {/* Case Studies Preview */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-blue-600 font-semibold uppercase tracking-wide text-sm">Proof</span>
