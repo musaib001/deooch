@@ -13,6 +13,9 @@ export default function Header() {
           </Link>
 
           <div className="hidden md:flex gap-8 items-center">
+            <Link href="/#services" className="hover:text-blue-400 transition">
+              Services
+            </Link>
             <Link href="/how-it-works" className="hover:text-blue-400 transition">
               How It Works
             </Link>
