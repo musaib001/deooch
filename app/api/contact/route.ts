@@ -25,7 +25,8 @@ export async function POST(req: Request) {
 
   try {
     await transporter.sendMail({
-      from: `"Deooch Website" <${user}>`,
+      // auth happens as ZOHO_USER (mk8930@gmail.com); send AS the verified hello@deooch.com address
+      from: `"Deooch Website" <hello@deooch.com>`,
       to: 'hello@deooch.com',
       replyTo: email,
       subject: `New inquiry from ${name}${company ? ` (${company})` : ''}`,
