@@ -16,10 +16,11 @@ export async function POST(req: Request) {
   }
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.zoho.com',
+    // ponytail: host via env so Zoho region (.com/.eu/.in) is fixable without a redeploy
+    host: process.env.ZOHO_HOST || 'smtp.zoho.com',
     port: 465,
     secure: true,
-    auth: { user, pass: pass.trim() }, // ponytail: trim guards against pasted trailing newline/space
+    auth: { user, pass: pass.trim() }, // trim guards against pasted trailing newline/space
   });
 
   try {
