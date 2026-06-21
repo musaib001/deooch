@@ -19,16 +19,24 @@ export async function POST(req: Request) {
     host: 'smtp.zoho.com',
     port: 465,
     secure: true,
-    auth: { user, pass },
+    auth: { user, pass: pass.trim() }, // ponytail: trim guards against pasted trailing newline/space
   });
 
-  await transporter.sendMail({
-    from: `"Deooch Website" <${user}>`,
-    to: 'hello@deooch.com',
-    replyTo: email,
-    subject: `New inquiry from ${name}${company ? ` (${company})` : ''}`,
-    text: `Name: ${name}\nEmail: ${email}\nCompany: ${company || '—'}\n\n${message}`,
-  });
+  try {
+    await transporter.sendMail({
+      from: `"Deooch Website" <${user}>`,
+      to: 'hello@deooch.com',
+      replyTo: email,
+      subject: `New inquiry from ${name}${company ? ` (${company})` : ''}`,
+      text: `Name: ${name}\nEmail: ${email}\nCompany: ${company || '—'}\n\n${message}`,
+    });
+  } catch (err) {
+    console.error('SMTP send failed:', err);
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : 'Email send failed.' },
+      { status: 500 },
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }
