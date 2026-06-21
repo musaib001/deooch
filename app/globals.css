@@ -13,21 +13,31 @@
 }
 
 body {
-  color: var(--foreground);
+  color: #e2e8f0;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-  /* AI-automation backdrop: soft slate gradient + faint dot grid so nothing is flat white */
-  background-color: #f4f6fb;
+  /* Dark AI-automation mesh: deep navy with blue/purple/cyan glows + faint grid */
+  background-color: #060912;
   background-image:
-    radial-gradient(circle at 15% 10%, rgba(59, 130, 246, 0.08), transparent 40%),
-    radial-gradient(circle at 85% 20%, rgba(139, 92, 246, 0.08), transparent 40%),
-    radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px);
-  background-size: auto, auto, 22px 22px;
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(56, 110, 255, 0.18), transparent),
+    radial-gradient(circle at 12% 25%, rgba(139, 92, 246, 0.12), transparent 35%),
+    radial-gradient(circle at 88% 65%, rgba(34, 211, 238, 0.10), transparent 35%),
+    linear-gradient(rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.035) 1px, transparent 1px);
+  background-size: auto, auto, auto, 44px 44px, 44px 44px;
   background-attachment: fixed;
 }
 
-/* glass surface for cards over the textured backdrop */
+/* glass surface for cards over the dark backdrop */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* gradient accent text */
+.text-gradient {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

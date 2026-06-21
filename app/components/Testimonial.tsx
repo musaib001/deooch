@@ -8,23 +8,23 @@ interface TestimonialProps {
 
 export default function Testimonial({ name, role, quote, initials, color }: TestimonialProps) {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+    <div className="glass rounded-2xl p-6 hover:border-blue-500/40 hover:-translate-y-1 transition-all duration-300">
       <div className="flex items-center gap-3 mb-4">
         <div className={`w-11 h-11 rounded-full flex items-center justify-center font-bold text-white text-sm flex-shrink-0 ${color}`}>
           {initials}
         </div>
         <div>
-          <p className="font-bold text-slate-900 leading-tight">{name}</p>
-          <p className="text-gray-500 text-sm">{role}</p>
+          <p className="font-bold text-white leading-tight">{name}</p>
+          <p className="text-slate-400 text-sm">{role}</p>
         </div>
       </div>
-      <p className="text-gray-700 leading-relaxed">{quote}</p>
+      <p className="text-slate-300 leading-relaxed">{quote}</p>
       <div className="text-yellow-400 mt-4">★★★★★</div>
     </div>
   );
 }
 
-// Highlight helper — green underline like the reference sites
+// Highlight helper — accent the key phrase
 export function HL({ children }: { children: React.ReactNode }) {
-  return <span className="bg-blue-100 text-blue-900 font-semibold px-1 rounded">{children}</span>;
+  return <span className="bg-blue-500/20 text-blue-300 font-semibold px-1 rounded">{children}</span>;
 }

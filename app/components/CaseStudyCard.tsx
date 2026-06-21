@@ -18,30 +18,36 @@ export default function CaseStudyCard({
   icon,
 }: CaseStudyCardProps) {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-xl transition">
-      <div className="text-4xl mb-4">{icon}</div>
-      <h3 className="text-xl font-bold text-slate-900 mb-2">{title}</h3>
-      <p className="text-blue-600 font-semibold mb-4">{company}</p>
+    <div className="glass rounded-2xl p-7 hover:border-blue-500/40 hover:-translate-y-1 transition-all duration-300">
+      <div className="flex items-center gap-3 mb-5">
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center text-2xl">
+          {icon}
+        </div>
+        <div>
+          <h3 className="text-lg font-bold text-white leading-tight">{title}</h3>
+          <p className="text-blue-400 text-sm font-medium">{company}</p>
+        </div>
+      </div>
 
       <div className="space-y-4">
         <div>
-          <h4 className="font-semibold text-slate-900 text-sm">Challenge</h4>
-          <p className="text-gray-700 text-sm">{challenge}</p>
+          <h4 className="font-semibold text-slate-400 text-xs uppercase tracking-wider mb-1">Challenge</h4>
+          <p className="text-slate-300 text-sm leading-relaxed">{challenge}</p>
         </div>
 
         <div>
-          <h4 className="font-semibold text-slate-900 text-sm">Solution</h4>
-          <p className="text-gray-700 text-sm">{solution}</p>
+          <h4 className="font-semibold text-slate-400 text-xs uppercase tracking-wider mb-1">Solution</h4>
+          <p className="text-slate-300 text-sm leading-relaxed">{solution}</p>
         </div>
 
         <div>
-          <h4 className="font-semibold text-slate-900 text-sm">Result</h4>
-          <p className="text-gray-700 text-sm">{result}</p>
+          <h4 className="font-semibold text-slate-400 text-xs uppercase tracking-wider mb-1">Result</h4>
+          <p className="text-slate-300 text-sm leading-relaxed">{result}</p>
         </div>
 
-        <div className="bg-blue-50 rounded-lg p-4">
-          <p className="text-blue-900 font-bold text-lg">{savings}</p>
-          <p className="text-blue-700 text-sm">time saved per month</p>
+        <div className="bg-gradient-to-r from-blue-500/15 to-purple-500/15 border border-blue-500/20 rounded-xl p-4 mt-2">
+          <p className="text-2xl font-bold text-gradient">{savings}</p>
+          <p className="text-slate-400 text-sm">saved per month</p>
         </div>
       </div>
     </div>

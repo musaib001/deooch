@@ -4,222 +4,150 @@ import Footer from '../components/Footer';
 
 export const metadata = {
   title: 'How It Works - Deooch',
-  description: 'Learn how we automate your business processes from discovery to deployment.',
+  description: 'Our process from discovery to deployment, in 2-4 weeks.',
 };
+
+const phases = [
+  {
+    n: 1,
+    title: 'Discovery Call',
+    duration: 'Day 1 · 30 min',
+    body: 'A focused call to find where your team bleeds time. We map your current workflow step by step and identify the highest-ROI automation candidate.',
+    bullets: [
+      'Which repetitive tasks consume the most hours each week?',
+      'How many people touch the process, and where are the handoffs?',
+      'Which systems are involved (CRM, accounting, email, spreadsheets)?',
+      'Where do errors and delays actually happen today?',
+    ],
+  },
+  {
+    n: 2,
+    title: 'Proposal & Scoping',
+    duration: 'Days 2-4',
+    body: 'You get a written proposal with a fixed scope and price — no hourly surprises. We define exactly what gets automated and how it plugs into your existing tools.',
+    bullets: [
+      'Automation scope: precise inputs, outputs, and integrations',
+      'Fixed timeline (typically 2-4 weeks) and fixed pricing',
+      'Projected impact: estimated hours saved and accuracy targets',
+      'A clear list of what we need from you to start',
+    ],
+  },
+  {
+    n: 3,
+    title: 'Build & Test',
+    duration: 'Weeks 1-3',
+    body: 'We build the automation against your real data and test it hard before it ever touches production. You see progress, not a black box.',
+    bullets: [
+      'Built and tuned on samples of your actual documents/data',
+      'Integration testing with your live tools (sandbox first)',
+      'Edge-case handling so unusual inputs don\'t break it',
+      'A confidence threshold: anything uncertain is flagged for human review, never guessed',
+    ],
+  },
+  {
+    n: 4,
+    title: 'Deployment & Training',
+    duration: 'Week 3-4',
+    body: 'We ship it to production and make sure your team can run it without us. Documentation, a live walkthrough, and a safety net included.',
+    bullets: [
+      'Phased rollout — run alongside your manual process first, then cut over',
+      'Live training session (30-60 min) for the people who use it',
+      'Plain-English docs and a quick-reference troubleshooting guide',
+      '30 days of included support for fixes and tuning',
+    ],
+  },
+  {
+    n: 5,
+    title: 'Monitor & Optimize',
+    duration: 'Ongoing',
+    body: 'Automations need light upkeep as your business changes. We keep an eye on accuracy and adapt as your process evolves.',
+    bullets: [
+      'Monthly performance check-ins and accuracy monitoring',
+      'Adjustments when your forms, vendors, or tools change',
+      'Alerts if something needs attention — before it becomes a problem',
+      'A roadmap of the next automations as you scale',
+    ],
+  },
+];
 
 export default function HowItWorks() {
   return (
     <div className="min-h-screen">
       <Header />
 
-      <section className="bg-slate-900 text-white py-20 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-6">How It Works</h1>
-          <p className="text-xl text-gray-300">
-            From discovery to deployment in 2-4 weeks.
+          <span className="text-gradient font-semibold uppercase tracking-wide text-sm">The Process</span>
+          <h1 className="text-5xl font-bold mb-6 mt-2 text-white">How It Works</h1>
+          <p className="text-xl text-slate-400">
+            A clear, fixed-scope process. From first call to live automation in 2-4 weeks.
           </p>
         </div>
       </section>
 
+      <section className="px-4 pb-12">
+        <div className="max-w-4xl mx-auto space-y-6">
+          {phases.map((p) => (
+            <div key={p.n} className="glass rounded-2xl p-7 md:p-8 hover:border-blue-500/40 transition">
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="flex md:flex-col items-center md:items-start gap-3 md:w-40 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-blue-600/30">
+                    {p.n}
+                  </div>
+                  <span className="text-blue-400 text-sm font-medium">{p.duration}</span>
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-2xl font-bold text-white mb-2">{p.title}</h2>
+                  <p className="text-slate-300 mb-4 leading-relaxed">{p.body}</p>
+                  <ul className="grid sm:grid-cols-2 gap-2.5">
+                    {p.bullets.map((b, i) => (
+                      <li key={i} className="flex gap-2.5 text-slate-400 text-sm leading-relaxed">
+                        <span className="text-blue-400 flex-shrink-0 mt-0.5">✓</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Guarantees */}
+      <section className="px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Guarantees</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="glass rounded-2xl p-6">
+              <div className="text-3xl mb-3">🎯</div>
+              <h3 className="font-bold text-white mb-2">Results or Money Back</h3>
+              <p className="text-slate-400 text-sm">If the automation doesn&apos;t hit the agreed targets within 30 days, we fix it at no extra cost — or you don&apos;t pay.</p>
+            </div>
+            <div className="glass rounded-2xl p-6">
+              <div className="text-3xl mb-3">📊</div>
+              <h3 className="font-bold text-white mb-2">99%+ Accuracy</h3>
+              <p className="text-slate-400 text-sm">Every automation is built to human-level reliability, with uncertain cases flagged for review rather than guessed.</p>
+            </div>
+            <div className="glass rounded-2xl p-6">
+              <div className="text-3xl mb-3">🔒</div>
+              <h3 className="font-bold text-white mb-2">Data Security</h3>
+              <p className="text-slate-400 text-sm">Encryption in transit and at rest. We work within your systems and follow GDPR practices — your data stays yours.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          {/* Phase 1 */}
-          <div className="mb-16">
-            <div className="flex gap-6 mb-8">
-              <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
-                1
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">Discovery Call</h2>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  We schedule a 30-minute call to understand your business and identify where you're wasting time. We ask about:
-                </p>
-                <ul className="mt-4 space-y-2 text-gray-700">
-                  <li className="flex gap-2">
-                    <span className="text-blue-600">•</span>
-                    <span>What repetitive tasks take up the most time each week?</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-blue-600">•</span>
-                    <span>How many people are involved in these tasks?</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-blue-600">•</span>
-                    <span>What systems do you currently use? (CRM, accounting, etc.)</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-blue-600">•</span>
-                    <span>What's your biggest bottleneck right now?</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Phase 2 */}
-          <div className="mb-16">
-            <div className="flex gap-6 mb-8">
-              <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
-                2
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">Proposal & Planning</h2>
-                <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                  Based on our conversation, we create a detailed proposal that includes:
-                </p>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                    <p className="font-semibold text-slate-900">Automation Scope</p>
-                    <p className="text-sm">Exactly what will be automated and how it integrates with your systems</p>
-                  </li>
-                  <li className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                    <p className="font-semibold text-slate-900">Time & Cost Estimate</p>
-                    <p className="text-sm">Clear timeline (typically 2-4 weeks) and fixed pricing</p>
-                  </li>
-                  <li className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                    <p className="font-semibold text-slate-900">Expected Impact</p>
-                    <p className="text-sm">Estimated hours saved per month and accuracy improvements</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Phase 3 */}
-          <div className="mb-16">
-            <div className="flex gap-6 mb-8">
-              <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
-                3
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">Build & Test</h2>
-                <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                  We build your automation and run it through thorough testing:
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-purple-50 p-4 rounded-lg">
-                    <p className="font-semibold text-slate-900 mb-2">Quality Assurance</p>
-                    <p className="text-sm text-gray-700">Tested against real data to ensure 99%+ accuracy</p>
-                  </div>
-                  <div className="bg-purple-50 p-4 rounded-lg">
-                    <p className="font-semibold text-slate-900 mb-2">Integration Testing</p>
-                    <p className="text-sm text-gray-700">Verified connection with your CRM, accounting, or other systems</p>
-                  </div>
-                  <div className="bg-purple-50 p-4 rounded-lg">
-                    <p className="font-semibold text-slate-900 mb-2">Edge Cases</p>
-                    <p className="text-sm text-gray-700">Tested unusual scenarios to prevent failures</p>
-                  </div>
-                  <div className="bg-purple-50 p-4 rounded-lg">
-                    <p className="font-semibold text-slate-900 mb-2">Documentation</p>
-                    <p className="text-sm text-gray-700">Clear guides for your team on how to use and troubleshoot</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Phase 4 */}
-          <div className="mb-16">
-            <div className="flex gap-6 mb-8">
-              <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
-                4
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">Deployment & Training</h2>
-                <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                  We deploy your automation and make sure your team knows how to use it:
-                </p>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex gap-3">
-                    <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
-                    <span>Live deployment to your production environment</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
-                    <span>Training session with your team (30-60 min)</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
-                    <span>Documentation and quick-reference guides</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
-                    <span>30-day support period for bug fixes and optimizations</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Phase 5 */}
-          <div className="mb-16">
-            <div className="flex gap-6 mb-8">
-              <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
-                5
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">Ongoing Optimization</h2>
-                <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                  After launch, we continue to improve and refine:
-                </p>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex gap-3">
-                    <span className="text-purple-600 font-bold flex-shrink-0">→</span>
-                    <span>Monthly check-ins to review performance and gather feedback</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-purple-600 font-bold flex-shrink-0">→</span>
-                    <span>Adjustments based on your workflow changes</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-purple-600 font-bold flex-shrink-0">→</span>
-                    <span>Continuous accuracy monitoring and improvements</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-purple-600 font-bold flex-shrink-0">→</span>
-                    <span>Access to additional automation opportunities as you scale</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 mb-16">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Our Guarantee</h2>
-            <div className="space-y-4">
-              <div className="flex gap-4">
-                <span className="text-3xl">🎯</span>
-                <div>
-                  <p className="font-semibold text-slate-900">Results or Money Back</p>
-                  <p className="text-gray-700">If your automation doesn't deliver the promised results within 30 days, we'll fix it at no extra cost.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <span className="text-3xl">📊</span>
-                <div>
-                  <p className="font-semibold text-slate-900">99%+ Accuracy</p>
-                  <p className="text-gray-700">All our automations are built to achieve 99% accuracy or higher. Human-level reliability.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <span className="text-3xl">🔒</span>
-                <div>
-                  <p className="font-semibold text-slate-900">Data Security</p>
-                  <p className="text-gray-700">Your data never leaves your systems. Encryption in transit and at rest. Full compliance with GDPR, HIPAA, and SOC 2.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Ready to Get Started?</h2>
-            <Link
-              href="/contact"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg transition text-lg"
-            >
-              Schedule Your Free Consultation
-            </Link>
-          </div>
+        <div className="max-w-4xl mx-auto text-center glass rounded-3xl p-12 border-blue-500/20">
+          <h2 className="text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
+          <p className="text-xl mb-8 text-slate-300">Book a free discovery call and we&apos;ll map your first automation.</p>
+          <Link
+            href="/contact"
+            className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-blue-600/30"
+          >
+            Schedule Your Free Consultation
+          </Link>
         </div>
       </section>
 
