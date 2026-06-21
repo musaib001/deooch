@@ -78,6 +78,37 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    q: 'How much does an automation cost?',
+    a: 'Most projects are a fixed price scoped to the work — typically a one-time build fee, with an optional monthly retainer for monitoring and changes. We agree on the exact number in the proposal before any work starts, so there are no hourly surprises.',
+  },
+  {
+    q: 'How long until it\'s up and running?',
+    a: 'Most automations go live in 2-4 weeks from the first call. Simpler workflows can be faster; complex multi-system integrations take a little longer. We give you a firm timeline in the proposal.',
+  },
+  {
+    q: 'Will this work with the tools we already use?',
+    a: 'Yes. We build around your existing stack — QuickBooks, Xero, HubSpot, Salesforce, Google Workspace, Excel, custom databases, and most other tools. If it has an API or an inbox, we can usually connect to it.',
+  },
+  {
+    q: 'Is my data safe?',
+    a: 'Your data stays within your systems wherever possible, encrypted in transit and at rest. We follow GDPR practices and never sell or share your data. Anything the AI is unsure about is flagged for human review rather than guessed.',
+  },
+  {
+    q: 'What if the automation makes a mistake?',
+    a: 'Every automation is built with a confidence threshold — uncertain cases are routed to a human instead of processed blindly. We also run alongside your manual process first, then cut over once accuracy is proven. And our results guarantee covers fixes at no extra cost.',
+  },
+  {
+    q: 'We\'re a small team — is this overkill for us?',
+    a: 'Not at all. Small teams feel repetitive work the most because every hour counts. Even automating one process — invoices, leads, or expenses — can give a few hours back every week. Start small, expand when you see the ROI.',
+  },
+  {
+    q: 'What do you need from us to get started?',
+    a: 'A 30-minute discovery call and a few sample documents or data so we understand your real workflow. From there we handle the build, testing, and deployment, with a short training session for your team at the end.',
+  },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -306,6 +337,27 @@ export default function Home() {
               color="bg-gradient-to-br from-purple-500 to-cyan-600"
               quote={<>Reports that took days now take hours, with <HL>100% data consistency</HL>. Our audits are painless now.</>}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-gradient font-semibold uppercase tracking-wide text-sm">FAQ</span>
+            <h2 className="text-4xl font-bold text-white mt-2">Frequently Asked Questions</h2>
+          </div>
+          <div className="space-y-3">
+            {faqs.map((f) => (
+              <details key={f.q} className="glass rounded-2xl p-6 group">
+                <summary className="flex justify-between items-center cursor-pointer text-white font-semibold list-none">
+                  <span>{f.q}</span>
+                  <span className="text-blue-400 text-xl transition-transform group-open:rotate-45 flex-shrink-0 ml-4">+</span>
+                </summary>
+                <p className="text-slate-300 leading-relaxed mt-4">{f.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
