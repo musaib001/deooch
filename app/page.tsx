@@ -5,8 +5,8 @@ import CaseStudyCard from './components/CaseStudyCard';
 import Testimonial, { HL } from './components/Testimonial';
 
 export const metadata = {
-  title: 'Deooch - AI Automation for Business',
-  description: 'Save hours of manual work with AI-powered automation. Invoice processing, document scanning, data entry.',
+  title: 'Deooch — AI Automation for Invoices, Documents & Data Entry',
+  description: 'Berlin-based AI automation service for SMBs. We automate invoice processing, document scanning, and data entry — clients save 28+ hours/month at 99%+ accuracy. Projects from €2,000.',
 };
 
 const services = [
@@ -81,7 +81,7 @@ const services = [
 const faqs = [
   {
     q: 'How much does an automation cost?',
-    a: 'Most projects are a fixed price scoped to the work — typically a one-time build fee, with an optional monthly retainer for monitoring and changes. We agree on the exact number in the proposal before any work starts, so there are no hourly surprises.',
+    a: 'Most projects land between €2,000 and €8,000 depending on complexity — a fixed one-time build fee, with an optional monthly retainer for monitoring and changes. We agree on the exact number in the proposal before any work starts, so there are no hourly surprises.',
   },
   {
     q: 'How long until it\'s up and running?',
@@ -119,16 +119,16 @@ export default function Home() {
         <div className="relative max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-6 text-sm text-slate-300">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            AI automation that pays for itself in weeks
+            Now taking new clients · Berlin-based
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
-            Save Hours of <span className="text-gradient">Manual Work</span>
+            AI Automation That <span className="text-gradient">Pays For Itself</span> in Weeks
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 mb-4 leading-relaxed max-w-3xl mx-auto">
             We build AI automations that handle your invoices, documents, and data entry—so your team stops doing busywork and starts doing real work.
           </p>
           <p className="text-slate-400 mb-10">
-            Most clients save <span className="text-white font-semibold">28+ hours every month</span> with <span className="text-white font-semibold">99%+ accuracy</span>.
+            Clients average <span className="text-white font-semibold">28+ hours saved per month</span> with <span className="text-white font-semibold">99%+ accuracy</span>.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
@@ -197,6 +197,23 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Works with your stack */}
+      <section className="py-12 px-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-slate-400 uppercase tracking-wider text-sm font-semibold mb-8">
+            Works with the tools you already use
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['QuickBooks', 'Xero', 'NetSuite', 'Stripe', 'HubSpot', 'Salesforce', 'Google Workspace', 'Excel', 'Zapier', 'Make', 'Notion', 'Slack'].map((tool) => (
+              <span key={tool} className="glass rounded-full px-5 py-2.5 text-slate-300 text-sm font-medium hover:border-blue-500/40 hover:text-white transition">
+                {tool}
+              </span>
+            ))}
+          </div>
+          <p className="text-slate-500 text-sm mt-6">…and most other tools with an API or inbox.</p>
         </div>
       </section>
 
@@ -286,13 +303,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing + Guarantees */}
+      <section className="py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Pricing &amp; Guarantees</span>
+            <h2 className="text-4xl font-bold text-white mt-2">Clear Pricing, Backed by Guarantees</h2>
+            <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
+              Fixed scope, fixed price — agreed before any work starts. Most projects land between
+              <span className="text-white font-semibold"> €2,000 and €8,000</span> depending on complexity, with optional monthly retainers for ongoing support.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="glass rounded-2xl p-6">
+              <div className="text-3xl mb-3">🎯</div>
+              <h3 className="font-bold text-white mb-2">Results or Money Back</h3>
+              <p className="text-slate-400 text-sm">If the automation doesn&apos;t hit the agreed targets within 30 days, we fix it at no extra cost — or you don&apos;t pay.</p>
+            </div>
+            <div className="glass rounded-2xl p-6">
+              <div className="text-3xl mb-3">📊</div>
+              <h3 className="font-bold text-white mb-2">99%+ Accuracy</h3>
+              <p className="text-slate-400 text-sm">Built to human-level reliability, with uncertain cases flagged for review rather than guessed.</p>
+            </div>
+            <div className="glass rounded-2xl p-6">
+              <div className="text-3xl mb-3">🔒</div>
+              <h3 className="font-bold text-white mb-2">Data Security</h3>
+              <p className="text-slate-400 text-sm">Encrypted in transit and at rest. We work within your systems and follow GDPR practices.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Testimonials</span>
             <h2 className="text-4xl font-bold text-white mt-2">Loved by Busy Teams</h2>
-            <p className="text-slate-400 mt-4 text-lg">Real feedback from clients who got their time back.</p>
+            <p className="text-slate-400 mt-4 text-lg">Feedback from clients who got their time back.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Testimonial
@@ -343,6 +391,21 @@ export default function Home() {
 
       {/* FAQ */}
       <section className="py-20 px-4">
+        {/* Schema markup for Google rich results */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a },
+              })),
+            }),
+          }}
+        />
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">FAQ</span>

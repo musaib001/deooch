@@ -3,8 +3,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'About Deooch - AI Automation',
-  description: 'Learn about Deooch and our mission to save businesses thousands of hours.',
+  title: 'About Deooch — AI Automation for SMBs, Founded in Berlin',
+  description: 'Deooch is a Berlin-based AI automation studio founded by Musaib Khan, bringing enterprise-grade automation to small and mid-sized businesses without the enterprise price tag.',
 };
 
 export default function About() {
@@ -39,10 +39,10 @@ export default function About() {
               <h3 className="text-2xl font-bold text-white mb-6">By the Numbers</h3>
               <ul className="space-y-5">
                 <li className="flex items-start gap-4">
-                  <span className="text-3xl font-bold text-gradient w-20">6+</span>
+                  <span className="text-3xl font-bold text-gradient w-20">3</span>
                   <div>
-                    <p className="font-semibold text-white">Clients Automated</p>
-                    <p className="text-sm text-slate-400">Across startup, SMB, and enterprise sectors</p>
+                    <p className="font-semibold text-white">Countries Served</p>
+                    <p className="text-sm text-slate-400">Clients in Berlin, London, and New York</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">

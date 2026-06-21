@@ -4,8 +4,8 @@ import Footer from '../components/Footer';
 import CaseStudyCard from '../components/CaseStudyCard';
 
 export const metadata = {
-  title: 'Case Studies - Deooch',
-  description: 'Real-world examples of AI automation success. See how we saved clients hours of manual work.',
+  title: 'Case Studies — AI Automation Results | Deooch',
+  description: 'See how Deooch automated invoice processing, document handling, and lead entry for real businesses — with the exact problem, solution, and hours saved per month.',
 };
 
 export default function CaseStudies() {

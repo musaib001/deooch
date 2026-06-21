@@ -3,8 +3,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'How It Works - Deooch',
-  description: 'Our process from discovery to deployment, in 2-4 weeks.',
+  title: 'How It Works — From Call to Live Automation in 2-4 Weeks | Deooch',
+  description: 'Our fixed-scope process: discovery call, proposal, build & test, deployment, and ongoing optimization. Most automations go live in 2-4 weeks, backed by a results guarantee.',
 };
 
 const phases = [
