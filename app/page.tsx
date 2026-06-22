@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import CaseStudyCard from './components/CaseStudyCard';
 import Testimonial, { HL } from './components/Testimonial';
+import WorkflowDemo from './components/WorkflowDemo';
 
 export const metadata = {
   title: 'Deooch — AI Automation for Invoices, Documents & Data Entry',
@@ -160,6 +161,20 @@ export default function Home() {
               <p className="text-slate-400 text-sm mt-1">To go live</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Interactive workflow demo */}
+      <section className="py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-gradient font-semibold uppercase tracking-wide text-sm">See It In Action</span>
+            <h2 className="text-4xl font-bold text-white mt-2">Watch an Invoice Get Processed</h2>
+            <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
+              Hit run and watch what normally takes your team 4 hours happen in 8 minutes.
+            </p>
+          </div>
+          <WorkflowDemo />
         </div>
       </section>
 
