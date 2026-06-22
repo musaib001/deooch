@@ -99,10 +99,6 @@ export default function Privacy() {
               </p>
             </div>
 
-            <div className="glass rounded-xl p-5 border-blue-500/20 text-sm text-slate-400">
-              This policy is a general template and not legal advice. We recommend having it reviewed by a qualified
-              data-protection professional before relying on it.
-            </div>
           </div>
         </div>
       </section>

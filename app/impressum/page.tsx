@@ -41,11 +41,6 @@ export default function Impressum() {
               <p>Musaib Khan (address as above)</p>
             </div>
 
-            <div className="glass rounded-xl p-5 border-blue-500/20 text-sm text-slate-400">
-              This Impressum is a template. German law (DDG / §5) has specific requirements depending on your legal form
-              (e.g. VAT ID, commercial register entry). Please confirm the exact required details with a German legal
-              professional and complete the street number and any VAT/registration info.
-            </div>
           </div>
         </div>
       </section>
