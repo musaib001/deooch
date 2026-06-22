@@ -49,20 +49,23 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/about" className="hover:text-blue-400 transition">About Us</Link></li>
-              <li><a href="mailto:hello@deooch.com" className="hover:text-blue-400 transition">Email</a></li>
+              <li><Link href="/privacy" className="hover:text-blue-400 transition">Privacy Policy</Link></li>
+              <li><Link href="/impressum" className="hover:text-blue-400 transition">Impressum</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4">Get Started</h3>
-            <p className="text-sm mb-4">Ready to save hours of manual work?</p>
-            <Link href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition">
-              Book a Call
-            </Link>
+            <h3 className="font-semibold text-white mb-4">Contact</h3>
+            <address className="text-sm not-italic space-y-1 text-gray-400">
+              <p>Deooch</p>
+              <p>Brigitte-Reimann-Straße</p>
+              <p>12629 Berlin, Germany</p>
+              <p><a href="mailto:hello@deooch.com" className="hover:text-blue-400 transition">hello@deooch.com</a></p>
+            </address>
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 text-sm text-center">
+        <div className="border-t border-slate-800 pt-8 text-sm text-center text-gray-400">
           <p>&copy; {currentYear} Deooch. All rights reserved.</p>
         </div>
       </div>
