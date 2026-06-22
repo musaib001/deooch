@@ -21,7 +21,6 @@ export default function Impressum() {
               <h2 className="text-xl font-bold text-white mb-3">Angaben gemäß § 5 DDG</h2>
               <p>
                 Deooch<br />
-                Musaib Khan<br />
                 Brigitte-Reimann-Straße<br />
                 12629 Berlin<br />
                 Germany
@@ -36,10 +35,6 @@ export default function Impressum() {
               </p>
             </div>
 
-            <div>
-              <h2 className="text-xl font-bold text-white mb-3">Verantwortlich für den Inhalt</h2>
-              <p>Musaib Khan (address as above)</p>
-            </div>
 
           </div>
         </div>
