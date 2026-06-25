@@ -153,67 +153,82 @@ export default function WorkflowDemo() {
         ))}
       </div>
 
-      <div className="grid md:grid-cols-5 gap-8">
-        {/* Steps */}
-        <div className="md:col-span-3 space-y-2">
-          {sc.steps.map((s, i) => {
-            const lit = i <= active;
-            const current = i === active && running;
-            return (
-              <div
-                key={s.title}
-                className={`flex items-center gap-4 rounded-xl p-3 border transition-all duration-300 ${
-                  lit ? 'bg-blue-500/10 border-blue-500/40' : 'bg-white/[0.02] border-white/5 opacity-50'
-                } ${current ? 'scale-[1.02]' : ''}`}
-              >
-                <div
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl flex-shrink-0 transition ${
-                    lit ? 'bg-gradient-to-br from-blue-500/30 to-purple-500/30 border border-white/10' : 'bg-white/5'
-                  }`}
-                >
-                  {lit ? s.icon : <span className="text-slate-600">{i + 1}</span>}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className={`font-semibold ${lit ? 'text-white' : 'text-slate-500'}`}>{s.title}</p>
-                  <p className={`text-sm truncate ${lit ? 'text-slate-300' : 'text-slate-600'}`}>{s.detail}</p>
-                </div>
-                {current && <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse flex-shrink-0" />}
-                {lit && !current && <span className="text-blue-400 flex-shrink-0">✓</span>}
-              </div>
-            );
-          })}
+      {/* Controls bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
+        <div>
+          <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Processing time</p>
+          <div className="flex items-end gap-3">
+            <p className="text-5xl font-bold text-gradient tabular-nums leading-none">{fmt(minutes, sc.autoMin)}</p>
+            <p className="text-slate-500 text-sm mb-1">
+              vs. manual <span className="line-through">{fmt(sc.manualMin, sc.manualMin)}</span> {sc.unit}
+            </p>
+          </div>
         </div>
-
-        {/* Counter + controls */}
-        <div className="md:col-span-2 flex flex-col justify-center text-center md:border-l border-white/10 md:pl-8">
-          <p className="text-slate-400 text-sm uppercase tracking-wider mb-1">Processing time</p>
-          <p className="text-6xl font-bold text-gradient tabular-nums leading-none">{fmt(minutes, sc.autoMin)}</p>
-          <p className="text-slate-500 text-sm mt-3">
-            Manual: <span className="line-through">{fmt(sc.manualMin, sc.manualMin)}</span> {sc.unit}
-          </p>
-
-          {done ? (
-            <div className="mt-6">
-              <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4 mb-4">
-                <p className="text-green-400 font-bold text-lg">≈ {fmt(saved, sc.autoMin)} saved</p>
-                <p className="text-slate-400 text-sm">{sc.unit}, every time</p>
-              </div>
-              <button onClick={() => reset()} className="text-blue-400 hover:text-blue-300 text-sm font-medium">
-                ↺ Run again
-              </button>
+        {done ? (
+          <div className="flex items-center gap-4">
+            <div className="bg-green-500/10 border border-green-500/30 rounded-xl px-4 py-2.5 text-center">
+              <p className="text-green-400 font-bold leading-tight">≈ {fmt(saved, sc.autoMin)} saved</p>
+              <p className="text-slate-400 text-xs">{sc.unit}, every time</p>
             </div>
-          ) : (
-            <button
-              onClick={run}
-              disabled={running}
-              className="mt-6 bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white font-semibold px-6 py-3.5 rounded-lg transition shadow-lg shadow-blue-600/30"
-            >
-              {running ? 'Running…' : '▶ Run Automation'}
+            <button onClick={() => reset()} className="text-blue-400 hover:text-blue-300 text-sm font-medium whitespace-nowrap">
+              ↺ Run again
             </button>
-          )}
-          <p className="text-slate-600 text-xs mt-4">Illustrative simulation — your real workflow, demoed free.</p>
-        </div>
+          </div>
+        ) : (
+          <button
+            onClick={run}
+            disabled={running}
+            className="bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-lg transition shadow-lg shadow-blue-600/30 whitespace-nowrap"
+          >
+            {running ? 'Running…' : '▶ Run Automation'}
+          </button>
+        )}
       </div>
+
+      {/* Horizontal node flow (n8n style) */}
+      <div className="flex items-stretch gap-0 overflow-x-auto pb-3 -mx-2 px-2">
+        {sc.steps.map((s, i) => {
+          const lit = i <= active;
+          const current = i === active && running;
+          return (
+            <div key={s.title} className="flex items-stretch flex-shrink-0">
+              {/* Connector */}
+              {i > 0 && (
+                <div className="flex items-center px-1 sm:px-2" aria-hidden>
+                  <div className={`h-0.5 w-6 sm:w-10 rounded-full transition-colors duration-300 ${
+                    i <= active ? 'bg-blue-500/60' : 'bg-white/10'
+                  }`} />
+                  <span className={`text-xs -ml-1 transition-colors duration-300 ${i <= active ? 'text-blue-400' : 'text-slate-600'}`}>▶</span>
+                </div>
+              )}
+              {/* Node */}
+              <div
+                className={`w-40 sm:w-44 rounded-xl border p-4 flex flex-col transition-all duration-300 ${
+                  lit ? 'bg-blue-500/10 border-blue-500/40' : 'bg-white/[0.02] border-white/5 opacity-50'
+                } ${current ? 'scale-[1.04] border-blue-400 shadow-lg shadow-blue-600/20' : ''}`}
+              >
+                <div className="flex items-center justify-between mb-2.5">
+                  <div
+                    className={`w-9 h-9 rounded-lg flex items-center justify-center text-lg transition ${
+                      lit ? 'bg-gradient-to-br from-blue-500/30 to-purple-500/30 border border-white/10' : 'bg-white/5'
+                    }`}
+                  >
+                    {lit ? s.icon : <span className="text-slate-600 text-sm">{i + 1}</span>}
+                  </div>
+                  {current ? (
+                    <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse" />
+                  ) : lit ? (
+                    <span className="text-blue-400 text-sm">✓</span>
+                  ) : null}
+                </div>
+                <p className={`font-semibold text-sm leading-tight mb-1 ${lit ? 'text-white' : 'text-slate-500'}`}>{s.title}</p>
+                <p className={`text-xs leading-snug ${lit ? 'text-slate-300' : 'text-slate-600'}`}>{s.detail}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <p className="text-slate-600 text-xs mt-4 text-center">Illustrative simulation — your real workflow, demoed free.</p>
     </div>
   );
 }
