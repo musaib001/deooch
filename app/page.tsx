@@ -6,8 +6,8 @@ import Testimonial, { HL } from './components/Testimonial';
 import WorkflowDemo from './components/WorkflowDemo';
 
 export const metadata = {
-  title: 'Deooch — AI Automation for Invoices, Documents & Data Entry',
-  description: 'Berlin-based AI automation service for SMBs. We automate invoice processing, document scanning, and data entry — clients save 28+ hours/month at 99%+ accuracy. Projects from €2,000.',
+  title: 'Deooch — AI Automation for Invoices, Freight Docs & Healthcare',
+  description: 'Berlin-based, GDPR-compliant AI automation for SMBs. We automate invoice processing, freight & shipping documents, and hospital admin — clients save 28+ hours/month at 99%+ accuracy. Free working demo of your process.',
 };
 
 const services = [
@@ -56,14 +56,25 @@ const services = [
     ],
   },
   {
-    icon: '📧',
-    title: 'Email & Lead Capture',
-    tagline: 'Never let an inbound lead go cold.',
+    icon: '🚚',
+    title: 'Freight & Shipping Document Automation',
+    tagline: 'Bills of lading, customs docs and PODs — handled.',
     points: [
-      'Parse inbound emails and web forms to extract contact and intent',
-      'Enrich with company data and push straight into your CRM',
-      'Trigger instant auto-replies and assign to the right rep',
-      'Kick off follow-up sequences so nothing slips through',
+      'Read bills of lading, commercial invoices, packing lists and customs forms with AI',
+      'Match shipments against bookings and flag discrepancies in weight, quantity or HS codes',
+      'Auto-calculate freight charges, demurrage and duties; push into your TMS or ERP',
+      'Track proof-of-delivery and trigger invoicing the moment a load is confirmed',
+    ],
+  },
+  {
+    icon: '🏥',
+    title: 'Hospital & Healthcare Management',
+    tagline: 'Less admin at the desk, more time with patients.',
+    points: [
+      'Digitise patient intake forms, referrals and lab reports into your EHR/HIS',
+      'Automate insurance claim prep, eligibility checks and coding from clinical notes',
+      'Schedule appointments, send reminders and reconcile no-shows automatically',
+      'GDPR-aware handling of patient data, with sensitive cases routed to staff for review',
     ],
   },
   {
@@ -145,6 +156,9 @@ export default function Home() {
               See Case Studies
             </Link>
           </div>
+          <p className="text-slate-400 mt-5 text-sm">
+            ✨ <span className="text-white font-semibold">Try it free:</span> send us one real process and we&apos;ll automate it for a live demo — <span className="text-white">free of cost</span>, no commitment.
+          </p>
 
           {/* Stats bar */}
           <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mt-16 pt-10 border-t border-white/10">
@@ -169,9 +183,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">See It In Action</span>
-            <h2 className="text-4xl font-bold text-white mt-2">Watch an Invoice Get Processed</h2>
+            <h2 className="text-4xl font-bold text-white mt-2">Watch the Busywork Disappear</h2>
             <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
-              Hit run and watch what normally takes your team 4 hours happen in 8 minutes.
+              Pick a workflow, hit run, and watch what takes your team hours happen in minutes.
             </p>
           </div>
           <WorkflowDemo />
@@ -229,6 +243,34 @@ export default function Home() {
             ))}
           </div>
           <p className="text-slate-500 text-sm mt-6">…and most other tools with an API or inbox.</p>
+        </div>
+      </section>
+
+      {/* Security & GDPR */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-10 border-blue-500/20">
+          <div className="flex flex-col md:flex-row md:items-center gap-8">
+            <div className="flex-1">
+              <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Security &amp; Privacy</span>
+              <h2 className="text-3xl font-bold text-white mt-2 mb-3">Your data is safe with us</h2>
+              <p className="text-slate-300 leading-relaxed">
+                We&apos;re Berlin-based and <span className="text-white font-semibold">GDPR-compliant</span> by default. Your data is encrypted in transit and at rest, processed within your own systems wherever possible, and never sold or shared. We sign DPAs and NDAs, and anything the AI is unsure about is routed to a human — never guessed.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3 md:w-72 flex-shrink-0">
+              {[
+                ['🇪🇺', 'GDPR compliant'],
+                ['🔒', 'Encrypted end-to-end'],
+                ['📄', 'DPA & NDA on request'],
+                ['👤', 'Human-in-the-loop'],
+              ].map(([icon, label]) => (
+                <div key={label} className="bg-white/[0.03] border border-white/10 rounded-xl p-4 text-center">
+                  <div className="text-2xl mb-1">{icon}</div>
+                  <p className="text-slate-300 text-xs font-medium">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -297,13 +339,13 @@ export default function Home() {
             />
 
             <CaseStudyCard
-              icon="🗂️"
-              title="Lead Data Entry"
-              company="Digital Marketing Agency (30 reps)"
-              challenge="200+ weekly leads from forms and emails were copied into HubSpot by hand. Reps often saw leads a day late, and 1 in 8 records had typos."
-              solution="We automated extraction from every inbound channel, enriched each lead with firmographic data, and pushed clean records into HubSpot with instant rep assignment."
-              result="Leads now land in the CRM within minutes, assigned and enriched. Response time improved 45% and data-entry errors effectively hit zero."
-              savings="25+ hrs"
+              icon="🚚"
+              title="Freight Document Automation"
+              company="Logistics Forwarder, Hamburg (60 staff)"
+              challenge="Ops keyed ~1,400 bills of lading, customs forms and PODs a month into the TMS by hand — slow, error-prone, and a constant source of disputed charges and demurrage."
+              solution="We built an AI pipeline that reads every shipping doc, matches it against bookings, recalculates freight and duties, and posts clean entries into the TMS with mismatches flagged."
+              result="Document handling dropped from ~90 hours to under 10 a month. Charge disputes fell sharply and invoices now go out the same day a load is delivered."
+              savings="80+ hrs"
             />
           </div>
 
@@ -373,11 +415,11 @@ export default function Home() {
               quote={<>We were drowning in document scanning. Within a month, our team was <HL>80% more efficient</HL>. Highly recommend.</>}
             />
             <Testimonial
-              name="Jessica Williams"
-              role="Sales Director, GrowthCo"
-              initials="JW"
+              name="Jonas Vogel"
+              role="Ops Manager, HanseFreight"
+              initials="JV"
               color="bg-gradient-to-br from-blue-500 to-purple-600"
-              quote={<>The lead entry automation <HL>cut our sales admin workload in half</HL>. Our reps can now focus on selling.</>}
+              quote={<>Our bills of lading and customs docs used to eat entire days. Deooch <HL>cut document handling by 85%</HL> and disputes dropped with it.</>}
             />
             <Testimonial
               name="David Park"
@@ -443,15 +485,15 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center glass rounded-3xl p-12 border-blue-500/20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to Save Hours?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">See It Work on Your Own Process — Free</h2>
           <p className="text-xl mb-8 text-slate-300">
-            Let&apos;s find the busywork in your business and automate it. Free consultation, no obligation.
+            Send us one real, repetitive task and we&apos;ll build a working automation demo of it at no cost. If it saves you time, we scope the full version. No obligation.
           </p>
           <Link
             href="/contact"
             className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-blue-600/30"
           >
-            Schedule Your Free Call
+            Get My Free Demo
           </Link>
         </div>
       </section>
