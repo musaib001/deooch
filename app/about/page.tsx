@@ -11,6 +11,18 @@ export const metadata = {
 export default function About() {
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ProfilePage',
+            dateModified: '2026-07-01',
+            mainEntity: { '@id': 'https://www.deooch.com/#founder' },
+            about: { '@id': 'https://www.deooch.com/#organization' },
+          }),
+        }}
+      />
       <Header />
 
       <section className="py-20 px-4">
@@ -84,6 +96,15 @@ export default function About() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 text-slate-300">
               <a href="mailto:hello@deooch.com" className="text-blue-400 hover:text-blue-300 font-semibold">
                 📧 hello@deooch.com
+              </a>
+              <span className="text-slate-600 hidden sm:inline">|</span>
+              <a
+                href="https://www.linkedin.com/in/musaib-khan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 font-semibold"
+              >
+                in LinkedIn
               </a>
               <span className="text-slate-600 hidden sm:inline">|</span>
               <p>📍 Berlin, Germany</p>

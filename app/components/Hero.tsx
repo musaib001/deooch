@@ -164,6 +164,11 @@ export default function Hero() {
             </div>
           ))}
         </motion.div>
+
+        <motion.p variants={item} className="mx-auto mt-6 max-w-2xl text-xs text-slate-500">
+          Figures are averages across active client automations, measured against each client&apos;s
+          own pre-automation baseline.
+        </motion.p>
       </motion.div>
     </section>
   );

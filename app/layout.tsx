@@ -49,6 +49,22 @@ const orgSchema = {
       areaServed: "EU",
       address: { "@type": "PostalAddress", addressLocality: "Berlin", addressCountry: "DE" },
       sameAs: ["https://www.linkedin.com/in/musaib-khan/"],
+      founder: { "@id": `${SITE}/#founder` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE}/#founder`,
+      name: "Musaib Khan",
+      jobTitle: "Founder & CEO",
+      worksFor: { "@id": `${SITE}/#organization` },
+      url: `${SITE}/about`,
+      sameAs: ["https://www.linkedin.com/in/musaib-khan/"],
+      knowsAbout: [
+        "AI automation",
+        "invoice processing",
+        "business process automation",
+        "document digitization",
+      ],
     },
     {
       "@type": "WebSite",

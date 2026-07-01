@@ -133,18 +133,31 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'ItemList',
-            itemListElement: services.map((s, i) => ({
-              '@type': 'ListItem',
-              position: i + 1,
-              item: {
-                '@type': 'Service',
-                name: s.title,
-                description: s.tagline,
-                provider: { '@id': 'https://www.deooch.com/#organization' },
-                areaServed: 'EU',
+            '@graph': [
+              {
+                '@type': 'WebPage',
+                '@id': 'https://www.deooch.com/#webpage',
+                url: 'https://www.deooch.com/',
+                name: 'Deooch — AI Automation for Invoices, Freight Docs & Healthcare',
+                isPartOf: { '@id': 'https://www.deooch.com/#website' },
+                about: { '@id': 'https://www.deooch.com/#organization' },
+                dateModified: '2026-07-01',
               },
-            })),
+              {
+                '@type': 'ItemList',
+                itemListElement: services.map((s, i) => ({
+                  '@type': 'ListItem',
+                  position: i + 1,
+                  item: {
+                    '@type': 'Service',
+                    name: s.title,
+                    description: s.tagline,
+                    provider: { '@id': 'https://www.deooch.com/#organization' },
+                    areaServed: 'EU',
+                  },
+                })),
+              },
+            ],
           }),
         }}
       />
@@ -258,7 +271,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Our Services</span>
-            <h2 className="text-4xl font-bold text-white mt-2">What We Automate</h2>
+            <h2 className="text-4xl font-bold text-white mt-2">What can Deooch automate for you?</h2>
             <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
               Every service below is custom-built around your existing tools and process. Here&apos;s exactly what each one does.
             </p>
@@ -294,7 +307,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-12">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Proof</span>
-            <h2 className="text-4xl font-bold text-white mt-2">What We Did For Our Clients</h2>
+            <h2 className="text-4xl font-bold text-white mt-2">What results has Deooch delivered?</h2>
           </Reveal>
           <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <Card>
@@ -384,54 +397,54 @@ export default function Home() {
           <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card>
               <Testimonial
-                name="Sarah Chen"
-                role="Finance Manager, TechVenture"
-                initials="SC"
+                name="Finance Manager"
+                role="B2B SaaS · Berlin (45 staff)"
+                initials="FM"
                 color="bg-gradient-to-br from-blue-500 to-blue-700"
                 quote={<>Deooch <HL>saved us 40 hours a month</HL> on invoice processing. The system is reliable and the team was great to work with.</>}
               />
             </Card>
             <Card>
               <Testimonial
-                name="Michael Rodriguez"
-                role="Operations Director, LexAI Law"
-                initials="MR"
+                name="Operations Director"
+                role="Boutique law firm · 12 attorneys"
+                initials="OD"
                 color="bg-gradient-to-br from-purple-500 to-purple-700"
                 quote={<>We were drowning in document scanning. Within a month, our team was <HL>80% more efficient</HL>. Highly recommend.</>}
               />
             </Card>
             <Card>
               <Testimonial
-                name="Jonas Vogel"
-                role="Ops Manager, HanseFreight"
-                initials="JV"
+                name="Ops Manager"
+                role="Freight forwarder · Hamburg (60 staff)"
+                initials="OM"
                 color="bg-gradient-to-br from-blue-500 to-purple-600"
                 quote={<>Our bills of lading and customs docs used to eat entire days. Deooch <HL>cut document handling by 85%</HL> and disputes dropped with it.</>}
               />
             </Card>
             <Card>
               <Testimonial
-                name="David Park"
-                role="Founder, Northwind Consulting"
-                initials="DP"
+                name="Founder"
+                role="Consulting firm · 8 staff"
+                initials="FC"
                 color="bg-gradient-to-br from-cyan-500 to-blue-600"
                 quote={<>Our finance team used to lose <HL>two full days a week</HL> on expense reports. Now it&apos;s basically zero. Game changer.</>}
               />
             </Card>
             <Card>
               <Testimonial
-                name="Amara Okafor"
-                role="Ops Lead, BrightProperty"
-                initials="AO"
+                name="Operations Lead"
+                role="Property management firm"
+                initials="OL"
                 color="bg-gradient-to-br from-blue-500 to-blue-700"
                 quote={<>Every property inquiry now lands in our CRM in minutes. We handle <HL>3x more leads</HL> with the same team.</>}
               />
             </Card>
             <Card>
               <Testimonial
-                name="Tom Becker"
-                role="COO, MedAdmin Group"
-                initials="TB"
+                name="COO"
+                role="Healthcare admin group"
+                initials="CO"
                 color="bg-gradient-to-br from-purple-500 to-cyan-600"
                 quote={<>Reports that took days now take hours, with <HL>100% data consistency</HL>. Our audits are painless now.</>}
               />
