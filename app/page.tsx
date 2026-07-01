@@ -5,6 +5,8 @@ import CaseStudyCard from './components/CaseStudyCard';
 import Testimonial, { HL } from './components/Testimonial';
 import WorkflowDemo from './components/WorkflowDemo';
 import Hero from './components/Hero';
+import { Reveal, Stagger, Card } from './components/Motion';
+import { Button } from '@/components/ui/button';
 
 export const metadata = {
   title: 'Deooch — AI Automation for Invoices, Freight Docs & Healthcare',
@@ -125,6 +127,27 @@ const faqs = [
 export default function Home() {
   return (
     <div className="min-h-screen">
+      {/* Service catalog schema for search + AI answer engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            itemListElement: services.map((s, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              item: {
+                '@type': 'Service',
+                name: s.title,
+                description: s.tagline,
+                provider: { '@id': 'https://www.deooch.com/#organization' },
+                areaServed: 'EU',
+              },
+            })),
+          }),
+        }}
+      />
       <Header />
 
       {/* Hero Section */}
@@ -133,57 +156,61 @@ export default function Home() {
       {/* Interactive workflow demo */}
       <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
+          <Reveal className="text-center mb-10">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">See It In Action</span>
             <h2 className="text-4xl font-bold text-white mt-2">Watch the Busywork Disappear</h2>
             <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
               Pick a workflow, hit run, and watch what takes your team hours happen in minutes.
             </p>
-          </div>
-          <WorkflowDemo />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <WorkflowDemo />
+          </Reveal>
         </div>
       </section>
 
       {/* Value Props */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-white mb-4">
-            Why Choose Deooch?
-          </h2>
-          <p className="text-center text-slate-400 mb-12 text-lg max-w-2xl mx-auto">
-            Manual, repetitive work drains your team and your margins. We make it disappear.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="glass p-8 rounded-2xl hover:border-blue-500/40 transition">
+          <Reveal>
+            <h2 className="text-4xl font-bold text-center text-white mb-4">
+              Why Choose Deooch?
+            </h2>
+            <p className="text-center text-slate-400 mb-12 text-lg max-w-2xl mx-auto">
+              Manual, repetitive work drains your team and your margins. We make it disappear.
+            </p>
+          </Reveal>
+          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="glass p-8 rounded-2xl hover:border-blue-500/40 transition-colors">
               <div className="w-14 h-14 bg-blue-500/15 border border-blue-500/20 rounded-xl flex items-center justify-center text-3xl mb-4">⚡</div>
               <h3 className="text-2xl font-bold text-white mb-3">Save Time</h3>
               <p className="text-slate-300">
                 Eliminate hours of manual data entry, invoice processing, and document scanning. Your team focuses on growth instead of busywork.
               </p>
-            </div>
+            </Card>
 
-            <div className="glass p-8 rounded-2xl hover:border-purple-500/40 transition">
+            <Card className="glass p-8 rounded-2xl hover:border-purple-500/40 transition-colors">
               <div className="w-14 h-14 bg-purple-500/15 border border-purple-500/20 rounded-xl flex items-center justify-center text-3xl mb-4">🎯</div>
               <h3 className="text-2xl font-bold text-white mb-3">Zero Errors</h3>
               <p className="text-slate-300">
                 AI-powered automation with built-in validation ensures consistent, accurate processing. No human mistakes, no missing data.
               </p>
-            </div>
+            </Card>
 
-            <div className="glass p-8 rounded-2xl hover:border-cyan-500/40 transition">
+            <Card className="glass p-8 rounded-2xl hover:border-cyan-500/40 transition-colors">
               <div className="w-14 h-14 bg-cyan-500/15 border border-cyan-500/20 rounded-xl flex items-center justify-center text-3xl mb-4">💰</div>
               <h3 className="text-2xl font-bold text-white mb-3">Cut Costs</h3>
               <p className="text-slate-300">
                 Reduce operational expenses by automating repetitive work. Scale your output without scaling your headcount.
               </p>
-            </div>
-          </div>
+            </Card>
+          </Stagger>
         </div>
       </section>
 
       {/* Works with your stack */}
       <section className="py-12 px-4">
-        <div className="max-w-5xl mx-auto text-center">
+        <Reveal className="max-w-5xl mx-auto text-center">
           <p className="text-slate-400 uppercase tracking-wider text-sm font-semibold mb-8">
             Works with the tools you already use
           </p>
@@ -195,12 +222,12 @@ export default function Home() {
             ))}
           </div>
           <p className="text-slate-500 text-sm mt-6">…and most other tools with an API or inbox.</p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Security & GDPR */}
       <section className="py-16 px-4">
-        <div className="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-10 border-blue-500/20">
+        <Reveal className="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-10 border-blue-500/20">
           <div className="flex flex-col md:flex-row md:items-center gap-8">
             <div className="flex-1">
               <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Security &amp; Privacy</span>
@@ -223,22 +250,22 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Services — detailed */}
       <section id="services" className="py-20 px-4 scroll-mt-20">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <Reveal className="text-center mb-14">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Our Services</span>
             <h2 className="text-4xl font-bold text-white mt-2">What We Automate</h2>
             <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
               Every service below is custom-built around your existing tools and process. Here&apos;s exactly what each one does.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          </Reveal>
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((s) => (
-              <div key={s.title} className="glass rounded-2xl p-7 hover:border-blue-500/40 transition group">
+              <Card key={s.title} className="glass rounded-2xl p-7 hover:border-blue-500/40 transition-colors group">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center text-2xl flex-shrink-0">
                     {s.icon}
@@ -256,58 +283,61 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Card>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* Case Studies Preview */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Proof</span>
             <h2 className="text-4xl font-bold text-white mt-2">What We Did For Our Clients</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <CaseStudyCard
-              icon="📄"
-              title="Invoice Automation"
-              company="B2B SaaS, Berlin (45 staff)"
-              challenge="The finance team manually keyed ~520 supplier invoices a month into Xero — roughly 40 hours, with frequent duplicate payments and late-payment fees."
-              solution="We built an inbox-to-Xero pipeline: invoices are auto-captured from accounts@, fields extracted with AI, validated against POs, and duplicates flagged before posting."
-              result="Posting time dropped from 40 hours to under 3. Zero duplicate payments in 6 months. Finance now spends its time on forecasting."
-              savings="40+ hrs"
-            />
+          </Reveal>
+          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <Card>
+              <CaseStudyCard
+                icon="📄"
+                title="Invoice Automation"
+                company="B2B SaaS, Berlin (45 staff)"
+                challenge="The finance team manually keyed ~520 supplier invoices a month into Xero — roughly 40 hours, with frequent duplicate payments and late-payment fees."
+                solution="We built an inbox-to-Xero pipeline: invoices are auto-captured from accounts@, fields extracted with AI, validated against POs, and duplicates flagged before posting."
+                result="Posting time dropped from 40 hours to under 3. Zero duplicate payments in 6 months. Finance now spends its time on forecasting."
+                savings="40+ hrs"
+              />
+            </Card>
 
-            <CaseStudyCard
-              icon="📑"
-              title="Document Processing"
-              company="Boutique Law Firm (12 attorneys)"
-              challenge="Paralegals scanned and hand-filed ~2,000 case documents monthly. Finding the right document took 15+ minutes and compliance audits were painful."
-              solution="We deployed an OCR + AI classification pipeline that digitises, tags by matter and document type, extracts key dates, and makes everything full-text searchable."
-              result="Filing is now instant and search takes seconds. Audit prep went from days to hours. Paralegals reclaimed ~30 hours a month for billable work."
-              savings="30+ hrs"
-            />
+            <Card>
+              <CaseStudyCard
+                icon="📑"
+                title="Document Processing"
+                company="Boutique Law Firm (12 attorneys)"
+                challenge="Paralegals scanned and hand-filed ~2,000 case documents monthly. Finding the right document took 15+ minutes and compliance audits were painful."
+                solution="We deployed an OCR + AI classification pipeline that digitises, tags by matter and document type, extracts key dates, and makes everything full-text searchable."
+                result="Filing is now instant and search takes seconds. Audit prep went from days to hours. Paralegals reclaimed ~30 hours a month for billable work."
+                savings="30+ hrs"
+              />
+            </Card>
 
-            <CaseStudyCard
-              icon="🚚"
-              title="Freight Document Automation"
-              company="Logistics Forwarder, Hamburg (60 staff)"
-              challenge="Ops keyed ~1,400 bills of lading, customs forms and PODs a month into the TMS by hand — slow, error-prone, and a constant source of disputed charges and demurrage."
-              solution="We built an AI pipeline that reads every shipping doc, matches it against bookings, recalculates freight and duties, and posts clean entries into the TMS with mismatches flagged."
-              result="Document handling dropped from ~90 hours to under 10 a month. Charge disputes fell sharply and invoices now go out the same day a load is delivered."
-              savings="80+ hrs"
-            />
-          </div>
+            <Card>
+              <CaseStudyCard
+                icon="🚚"
+                title="Freight Document Automation"
+                company="Logistics Forwarder, Hamburg (60 staff)"
+                challenge="Ops keyed ~1,400 bills of lading, customs forms and PODs a month into the TMS by hand — slow, error-prone, and a constant source of disputed charges and demurrage."
+                solution="We built an AI pipeline that reads every shipping doc, matches it against bookings, recalculates freight and duties, and posts clean entries into the TMS with mismatches flagged."
+                result="Document handling dropped from ~90 hours to under 10 a month. Charge disputes fell sharply and invoices now go out the same day a load is delivered."
+                savings="80+ hrs"
+              />
+            </Card>
+          </Stagger>
 
           <div className="text-center">
-            <Link
-              href="/case-studies"
-              className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3 rounded-lg transition"
-            >
-              View All Case Studies
-            </Link>
+            <Button asChild>
+              <Link href="/case-studies">View All Case Studies</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -315,86 +345,98 @@ export default function Home() {
       {/* Pricing + Guarantees */}
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Pricing &amp; Guarantees</span>
             <h2 className="text-4xl font-bold text-white mt-2">Clear Pricing, Backed by Guarantees</h2>
             <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
               Fixed scope, fixed price — agreed before any work starts. Most projects land between
               <span className="text-white font-semibold"> €2,000 and €8,000</span> depending on complexity, with optional monthly retainers for ongoing support.
             </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="glass rounded-2xl p-6">
+          </Reveal>
+          <Stagger className="grid md:grid-cols-3 gap-6">
+            <Card className="glass rounded-2xl p-6">
               <div className="text-3xl mb-3">🎯</div>
               <h3 className="font-bold text-white mb-2">Results or Money Back</h3>
               <p className="text-slate-400 text-sm">If the automation doesn&apos;t hit the agreed targets within 30 days, we fix it at no extra cost — or you don&apos;t pay.</p>
-            </div>
-            <div className="glass rounded-2xl p-6">
+            </Card>
+            <Card className="glass rounded-2xl p-6">
               <div className="text-3xl mb-3">📊</div>
               <h3 className="font-bold text-white mb-2">99%+ Accuracy</h3>
               <p className="text-slate-400 text-sm">Built to human-level reliability, with uncertain cases flagged for review rather than guessed.</p>
-            </div>
-            <div className="glass rounded-2xl p-6">
+            </Card>
+            <Card className="glass rounded-2xl p-6">
               <div className="text-3xl mb-3">🔒</div>
               <h3 className="font-bold text-white mb-2">Data Security</h3>
               <p className="text-slate-400 text-sm">Encrypted in transit and at rest. We work within your systems and follow GDPR practices.</p>
-            </div>
-          </div>
+            </Card>
+          </Stagger>
         </div>
       </section>
 
       {/* Testimonials */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Testimonials</span>
             <h2 className="text-4xl font-bold text-white mt-2">Loved by Busy Teams</h2>
             <p className="text-slate-400 mt-4 text-lg">Feedback from clients who got their time back.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Testimonial
-              name="Sarah Chen"
-              role="Finance Manager, TechVenture"
-              initials="SC"
-              color="bg-gradient-to-br from-blue-500 to-blue-700"
-              quote={<>Deooch <HL>saved us 40 hours a month</HL> on invoice processing. The system is reliable and the team was great to work with.</>}
-            />
-            <Testimonial
-              name="Michael Rodriguez"
-              role="Operations Director, LexAI Law"
-              initials="MR"
-              color="bg-gradient-to-br from-purple-500 to-purple-700"
-              quote={<>We were drowning in document scanning. Within a month, our team was <HL>80% more efficient</HL>. Highly recommend.</>}
-            />
-            <Testimonial
-              name="Jonas Vogel"
-              role="Ops Manager, HanseFreight"
-              initials="JV"
-              color="bg-gradient-to-br from-blue-500 to-purple-600"
-              quote={<>Our bills of lading and customs docs used to eat entire days. Deooch <HL>cut document handling by 85%</HL> and disputes dropped with it.</>}
-            />
-            <Testimonial
-              name="David Park"
-              role="Founder, Northwind Consulting"
-              initials="DP"
-              color="bg-gradient-to-br from-cyan-500 to-blue-600"
-              quote={<>Our finance team used to lose <HL>two full days a week</HL> on expense reports. Now it&apos;s basically zero. Game changer.</>}
-            />
-            <Testimonial
-              name="Amara Okafor"
-              role="Ops Lead, BrightProperty"
-              initials="AO"
-              color="bg-gradient-to-br from-blue-500 to-blue-700"
-              quote={<>Every property inquiry now lands in our CRM in minutes. We handle <HL>3x more leads</HL> with the same team.</>}
-            />
-            <Testimonial
-              name="Tom Becker"
-              role="COO, MedAdmin Group"
-              initials="TB"
-              color="bg-gradient-to-br from-purple-500 to-cyan-600"
-              quote={<>Reports that took days now take hours, with <HL>100% data consistency</HL>. Our audits are painless now.</>}
-            />
-          </div>
+          </Reveal>
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card>
+              <Testimonial
+                name="Sarah Chen"
+                role="Finance Manager, TechVenture"
+                initials="SC"
+                color="bg-gradient-to-br from-blue-500 to-blue-700"
+                quote={<>Deooch <HL>saved us 40 hours a month</HL> on invoice processing. The system is reliable and the team was great to work with.</>}
+              />
+            </Card>
+            <Card>
+              <Testimonial
+                name="Michael Rodriguez"
+                role="Operations Director, LexAI Law"
+                initials="MR"
+                color="bg-gradient-to-br from-purple-500 to-purple-700"
+                quote={<>We were drowning in document scanning. Within a month, our team was <HL>80% more efficient</HL>. Highly recommend.</>}
+              />
+            </Card>
+            <Card>
+              <Testimonial
+                name="Jonas Vogel"
+                role="Ops Manager, HanseFreight"
+                initials="JV"
+                color="bg-gradient-to-br from-blue-500 to-purple-600"
+                quote={<>Our bills of lading and customs docs used to eat entire days. Deooch <HL>cut document handling by 85%</HL> and disputes dropped with it.</>}
+              />
+            </Card>
+            <Card>
+              <Testimonial
+                name="David Park"
+                role="Founder, Northwind Consulting"
+                initials="DP"
+                color="bg-gradient-to-br from-cyan-500 to-blue-600"
+                quote={<>Our finance team used to lose <HL>two full days a week</HL> on expense reports. Now it&apos;s basically zero. Game changer.</>}
+              />
+            </Card>
+            <Card>
+              <Testimonial
+                name="Amara Okafor"
+                role="Ops Lead, BrightProperty"
+                initials="AO"
+                color="bg-gradient-to-br from-blue-500 to-blue-700"
+                quote={<>Every property inquiry now lands in our CRM in minutes. We handle <HL>3x more leads</HL> with the same team.</>}
+              />
+            </Card>
+            <Card>
+              <Testimonial
+                name="Tom Becker"
+                role="COO, MedAdmin Group"
+                initials="TB"
+                color="bg-gradient-to-br from-purple-500 to-cyan-600"
+                quote={<>Reports that took days now take hours, with <HL>100% data consistency</HL>. Our audits are painless now.</>}
+              />
+            </Card>
+          </Stagger>
         </div>
       </section>
 
@@ -416,38 +458,37 @@ export default function Home() {
           }}
         />
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">FAQ</span>
             <h2 className="text-4xl font-bold text-white mt-2">Frequently Asked Questions</h2>
-          </div>
-          <div className="space-y-3">
+          </Reveal>
+          <Stagger className="space-y-3">
             {faqs.map((f) => (
-              <details key={f.q} className="glass rounded-2xl p-6 group">
-                <summary className="flex justify-between items-center cursor-pointer text-white font-semibold list-none">
-                  <span>{f.q}</span>
-                  <span className="text-blue-400 text-xl transition-transform group-open:rotate-45 flex-shrink-0 ml-4">+</span>
-                </summary>
-                <p className="text-slate-300 leading-relaxed mt-4">{f.a}</p>
-              </details>
+              <Card key={f.q}>
+                <details className="glass rounded-2xl p-6 group">
+                  <summary className="flex justify-between items-center cursor-pointer text-white font-semibold list-none">
+                    <span>{f.q}</span>
+                    <span className="text-blue-400 text-xl transition-transform group-open:rotate-45 flex-shrink-0 ml-4">+</span>
+                  </summary>
+                  <p className="text-slate-300 leading-relaxed mt-4">{f.a}</p>
+                </details>
+              </Card>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center glass rounded-3xl p-12 border-blue-500/20">
+        <Reveal className="max-w-4xl mx-auto text-center glass rounded-3xl p-12 border-blue-500/20">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">See It Work on Your Own Process — Free</h2>
           <p className="text-xl mb-8 text-slate-300">
             Send us one real, repetitive task and we&apos;ll build a working automation demo of it at no cost. If it saves you time, we scope the full version. No obligation.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-blue-600/30"
-          >
-            Get My Free Demo
-          </Link>
-        </div>
+          <Button asChild size="lg">
+            <Link href="/contact">Get My Free Demo</Link>
+          </Button>
+        </Reveal>
       </section>
 
       <Footer />

@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 export const metadata = {
   title: 'Impressum — Deooch',
   description: 'Legal disclosure (Impressum) for Deooch.',
+  alternates: { canonical: '/impressum' },
 };
 
 export default function Impressum() {

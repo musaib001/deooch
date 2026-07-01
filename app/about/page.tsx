@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 export const metadata = {
   title: 'About Deooch — AI Automation for SMBs, Founded in Berlin',
   description: 'Deooch is a Berlin-based AI automation studio founded by Musaib Khan, bringing enterprise-grade automation to small and mid-sized businesses without the enterprise price tag.',
+  alternates: { canonical: '/about' },
 };
 
 export default function About() {

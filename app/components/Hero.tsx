@@ -114,25 +114,20 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        <motion.h1
-          variants={item}
-          className="mb-6 text-5xl font-bold leading-tight text-white md:text-7xl"
-        >
+        {/* LCP content — rendered visible on the server, not gated behind JS/hydration */}
+        <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-7xl">
           AI Automation That <span className="text-gradient">Pays For Itself</span> in Weeks
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          variants={item}
-          className="mx-auto mb-4 max-w-3xl text-xl leading-relaxed text-slate-300 md:text-2xl"
-        >
+        <p className="mx-auto mb-4 max-w-3xl text-xl leading-relaxed text-slate-300 md:text-2xl">
           We build AI automations that handle your invoices, documents, and data entry—so your team
           stops doing busywork and starts doing real work.
-        </motion.p>
+        </p>
 
-        <motion.p variants={item} className="mb-10 text-slate-400">
+        <p className="mb-10 text-slate-400">
           Clients average <span className="font-semibold text-white">28+ hours saved per month</span>{' '}
           with <span className="font-semibold text-white">99%+ accuracy</span>.
-        </motion.p>
+        </p>
 
         <motion.div variants={item} className="flex flex-wrap justify-center gap-4">
           <Button asChild size="lg">

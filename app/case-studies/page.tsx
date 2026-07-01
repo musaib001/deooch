@@ -6,6 +6,7 @@ import CaseStudyCard from '../components/CaseStudyCard';
 export const metadata = {
   title: 'Case Studies — AI Automation Results | Deooch',
   description: 'See how Deooch automated invoice processing, document handling, and lead entry for real businesses — with the exact problem, solution, and hours saved per month.',
+  alternates: { canonical: '/case-studies' },
 };
 
 export default function CaseStudies() {

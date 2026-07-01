@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 export const metadata = {
   title: 'Privacy Policy — Deooch',
   description: 'How Deooch collects, uses, and protects your personal data.',
+  alternates: { canonical: '/privacy' },
 };
 
 export default function Privacy() {
