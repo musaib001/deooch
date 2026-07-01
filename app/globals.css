@@ -32,6 +32,29 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* animated logo marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; flex-wrap: wrap; justify-content: center; }
+}
+
+/* blog article body — style raw markup coming from post content */
+.blog-body { font-size: 1.0625rem; line-height: 1.75; }
+.blog-body h2 { color: #fff; font-size: 1.5rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+.blog-body p { color: #cfcfcf; }
+.blog-body ul { list-style: disc; padding-left: 1.5rem; }
+.blog-body li { color: #cfcfcf; margin: 0.35rem 0; }
+.blog-body em { color: #fff; font-style: italic; }
+
 /* monochrome accent text — subtle white-to-grey sheen */
 .text-gradient {
   background: linear-gradient(90deg, #ffffff, #b5b5b5);

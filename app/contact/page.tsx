@@ -34,7 +34,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-neutral-950 text-white">
       <Header />
 
       <section className="relative py-20 px-4 overflow-hidden">
@@ -86,22 +86,22 @@ export default function Contact() {
                   <div>
                     <label className="block text-sm font-medium mb-2">Name *</label>
                     <input name="name" required placeholder="Jane Doe"
-                      className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-white/20 transition" />
+                      className="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-white/20 transition" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Business Email *</label>
                     <input name="email" type="email" required placeholder="jane@company.com"
-                      className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-white/20 transition" />
+                      className="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-white/20 transition" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Company</label>
                     <input name="company" placeholder="Acme Inc."
-                      className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-white/20 transition" />
+                      className="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-white/20 transition" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">What would you like to automate? *</label>
                     <textarea name="message" required rows={5} placeholder="We process ~300 invoices a month by hand..."
-                      className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-white/20 transition resize-none" />
+                      className="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-white/20 transition resize-none" />
                   </div>
 
                   {status === 'error' && <p className="text-red-400 text-sm">{error}</p>}

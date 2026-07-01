@@ -5,9 +5,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const links = [
-  { href: '/#services', label: 'Services' },
+  { href: '/solutions', label: 'Solutions' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/case-studies', label: 'Case Studies' },
+  { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
 ];
 
@@ -15,7 +16,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-slate-900/80 backdrop-blur border-b border-white/10 text-white sticky top-0 z-50">
+    <header className="bg-neutral-900/80 backdrop-blur border-b border-white/10 text-white sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>

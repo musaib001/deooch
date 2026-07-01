@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-gray-300 py-12 border-t border-slate-800">
+    <footer className="bg-neutral-900 text-gray-300 py-12 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-2 md:col-span-1">
@@ -39,9 +39,11 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-white mb-4">Product</h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/solutions" className="hover:text-white transition">Solutions</Link></li>
               <li><Link href="/how-it-works" className="hover:text-white transition">How It Works</Link></li>
               <li><Link href="/case-studies" className="hover:text-white transition">Case Studies</Link></li>
               <li><Link href="/compare/automation-agency-vs-diy" className="hover:text-white transition">Agency vs DIY Tools</Link></li>
+              <li><Link href="/support" className="hover:text-white transition">Support</Link></li>
               <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
             </ul>
           </div>
@@ -50,6 +52,7 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+              <li><Link href="/blog" className="hover:text-white transition">Blog</Link></li>
               <li><Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
               <li><Link href="/impressum" className="hover:text-white transition">Impressum</Link></li>
             </ul>
@@ -66,7 +69,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 text-sm text-center text-gray-400">
+        <div className="border-t border-neutral-800 pt-8 text-sm text-center text-gray-400">
           <p>&copy; {currentYear} Deooch. All rights reserved.</p>
         </div>
       </div>
