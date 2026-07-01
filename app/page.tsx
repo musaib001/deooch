@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import CaseStudyCard from './components/CaseStudyCard';
 import Testimonial, { HL } from './components/Testimonial';
 import WorkflowDemo from './components/WorkflowDemo';
+import Hero from './components/Hero';
 
 export const metadata = {
   title: 'Deooch — AI Automation for Invoices, Freight Docs & Healthcare',
@@ -127,56 +128,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-28 px-4 overflow-hidden">
-        <div className="relative max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-6 text-sm text-slate-300">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            Now taking new clients · Berlin-based
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
-            AI Automation That <span className="text-gradient">Pays For Itself</span> in Weeks
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-300 mb-4 leading-relaxed max-w-3xl mx-auto">
-            We build AI automations that handle your invoices, documents, and data entry—so your team stops doing busywork and starts doing real work.
-          </p>
-          <p className="text-slate-400 mb-10">
-            Clients average <span className="text-white font-semibold">28+ hours saved per month</span> with <span className="text-white font-semibold">99%+ accuracy</span>.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link
-              href="/contact"
-              className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-blue-600/30"
-            >
-              Book a Free Consultation
-            </Link>
-            <Link
-              href="/case-studies"
-              className="glass hover:border-white/20 text-white font-semibold px-8 py-4 rounded-lg transition text-lg"
-            >
-              See Case Studies
-            </Link>
-          </div>
-          <p className="text-slate-400 mt-5 text-sm">
-            ✨ <span className="text-white font-semibold">Try it free:</span> send us one real process and we&apos;ll automate it for a live demo — <span className="text-white">free of cost</span>, no commitment.
-          </p>
-
-          {/* Stats bar */}
-          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mt-16 pt-10 border-t border-white/10">
-            <div>
-              <p className="text-4xl font-bold text-gradient">150+</p>
-              <p className="text-slate-400 text-sm mt-1">Hours saved / month</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-gradient">99.2%</p>
-              <p className="text-slate-400 text-sm mt-1">Accuracy rate</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-gradient">2-4 wk</p>
-              <p className="text-slate-400 text-sm mt-1">To go live</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Interactive workflow demo */}
       <section className="py-12 px-4">
