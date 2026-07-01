@@ -116,7 +116,7 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 ['Specialized Expertise', 'We focus exclusively on automation workflows. That depth means we build solutions that actually hold up in production, not generic templates.'],
-                ['Fast Deployment', 'Most clients see automation running within 2-4 weeks. Fixed scope, fixed price—no open-ended consulting engagements.'],
+                ['Fast Deployment', 'Most clients see automation running within 2-4 weeks. Simple monthly pricing—no large upfront fee, no open-ended consulting engagements.'],
                 ['Direct Founder Access', 'You work directly with the person building your automation. No account managers, no support-ticket black holes.'],
                 ['Proven, Measured Results', 'Clients average 28+ hours saved per month at 99%+ accuracy. We agree on the metrics up front and report against them.'],
               ].map(([title, body]) => (

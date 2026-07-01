@@ -21,6 +21,6 @@
 ## Facts
 - Location: Berlin, Germany
 - Compliance: GDPR-compliant; DPA & NDA on request; encrypted in transit and at rest; human-in-the-loop review
-- Pricing: fixed one-time build fee, typically €2,000–€8,000 by complexity; optional monthly retainer
+- Pricing: simple monthly subscription, typically €10–€50/month by complexity and volume; no large upfront fee
 - Timeline: most automations go live in 2–4 weeks
 - Guarantee: results or money back within 30 days; 99%+ accuracy

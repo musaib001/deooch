@@ -25,10 +25,10 @@ const phases = [
     n: 2,
     title: 'Proposal & Scoping',
     duration: 'Days 2-4',
-    body: 'You get a written proposal with a fixed scope and price — no hourly surprises. We define exactly what gets automated and how it plugs into your existing tools.',
+    body: 'You get a written proposal with a fixed scope and a simple monthly price — no hourly surprises. We define exactly what gets automated and how it plugs into your existing tools.',
     bullets: [
       'Automation scope: precise inputs, outputs, and integrations',
-      'Fixed timeline (typically 2-4 weeks) and fixed pricing',
+      'Fixed timeline (typically 2-4 weeks) and simple monthly pricing',
       'Projected impact: estimated hours saved and accuracy targets',
       'A clear list of what we need from you to start',
     ],

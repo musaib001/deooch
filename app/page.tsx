@@ -96,7 +96,7 @@ const services = [
 const faqs = [
   {
     q: 'How much does an automation cost?',
-    a: 'Most projects land between €2,000 and €8,000 depending on complexity — a fixed one-time build fee, with an optional monthly retainer for monitoring and changes. We agree on the exact number in the proposal before any work starts, so there are no hourly surprises.',
+    a: 'Most automations are a simple monthly subscription — between €10 and €50/month depending on complexity and volume, with no large upfront build fee. We agree on the exact plan in the proposal before any work starts, so there are no hourly surprises.',
   },
   {
     q: 'How long until it\'s up and running?',
@@ -362,8 +362,8 @@ export default function Home() {
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Pricing &amp; Guarantees</span>
             <h2 className="text-4xl font-bold text-white mt-2">Clear Pricing, Backed by Guarantees</h2>
             <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
-              Fixed scope, fixed price — agreed before any work starts. Most projects land between
-              <span className="text-white font-semibold"> €2,000 and €8,000</span> depending on complexity, with optional monthly retainers for ongoing support.
+              Simple monthly pricing — agreed before any work starts. Most automations run between
+              <span className="text-white font-semibold"> €10 and €50/month</span> depending on complexity and volume, with no large upfront fee.
             </p>
           </Reveal>
           <Stagger className="grid md:grid-cols-3 gap-6">
