@@ -26,12 +26,12 @@ export default function CaseStudies() {
 
       {/* Featured deep-dive */}
       <section className="px-4 pb-12">
-        <div className="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-12 border-blue-500/20">
+        <div className="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-12 border-white/15">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center text-3xl">📄</div>
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center text-3xl">📄</div>
             <div>
               <h2 className="text-2xl font-bold text-white">Invoice-to-Accounting Automation</h2>
-              <p className="text-blue-400">B2B SaaS company · Berlin · 45 employees</p>
+              <p className="text-white">B2B SaaS company · Berlin · 45 employees</p>
             </div>
           </div>
 
@@ -57,15 +57,15 @@ export default function CaseStudies() {
           </div>
 
           <div className="grid grid-cols-3 gap-4 mt-8">
-            <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 text-center">
+            <div className="bg-white/10 border border-white/15 rounded-xl p-4 text-center">
               <p className="text-3xl font-bold text-gradient">40→3</p>
               <p className="text-slate-400 text-xs mt-1">hours per month</p>
             </div>
-            <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 text-center">
+            <div className="bg-white/10 border border-white/15 rounded-xl p-4 text-center">
               <p className="text-3xl font-bold text-gradient">€0</p>
               <p className="text-slate-400 text-xs mt-1">duplicate payments</p>
             </div>
-            <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 text-center">
+            <div className="bg-white/10 border border-white/15 rounded-xl p-4 text-center">
               <p className="text-3xl font-bold text-gradient">3 wks</p>
               <p className="text-slate-400 text-xs mt-1">to go live</p>
             </div>
@@ -138,7 +138,7 @@ export default function CaseStudies() {
             />
           </div>
 
-          <div className="glass border-blue-500/20 rounded-3xl p-8 text-center">
+          <div className="glass border-white/15 rounded-3xl p-8 text-center">
             <h2 className="text-3xl font-bold text-white mb-8">Average Results Across Clients</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
@@ -159,14 +159,14 @@ export default function CaseStudies() {
       </section>
 
       <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center glass rounded-3xl p-12 border-blue-500/20">
+        <div className="max-w-4xl mx-auto text-center glass rounded-3xl p-12 border-white/15">
           <h2 className="text-4xl font-bold mb-6 text-white">Ready to Automate Your Business?</h2>
           <p className="text-xl mb-8 text-slate-300">
             Every business has repetitive work that can be automated. Let&apos;s find yours.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-blue-600/30"
+            className="inline-block bg-white hover:bg-neutral-200 text-black font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-black/40"
           >
             Schedule Consultation
           </Link>

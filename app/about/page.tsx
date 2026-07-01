@@ -48,7 +48,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="glass rounded-2xl p-8 border-blue-500/20">
+            <div className="glass rounded-2xl p-8 border-white/15">
               <h3 className="text-2xl font-bold text-white mb-6">By the Numbers</h3>
               <ul className="space-y-5">
                 <li className="flex items-start gap-4">
@@ -76,15 +76,15 @@ export default function About() {
             </div>
           </div>
 
-          <div className="glass rounded-3xl p-8 md:p-12 mb-12 border-blue-500/20">
+          <div className="glass rounded-3xl p-8 md:p-12 mb-12 border-white/15">
             <h2 className="text-3xl font-bold text-white mb-6">Meet Your Founder</h2>
             <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center text-5xl font-bold text-white flex-shrink-0 shadow-lg shadow-blue-600/30">
+              <div className="w-32 h-32 bg-gradient-to-br from-neutral-600 to-neutral-900 rounded-full flex items-center justify-center text-5xl font-bold text-white flex-shrink-0 shadow-lg shadow-black/40">
                 MK
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">Musaib Khan</h3>
-                <p className="text-blue-400 font-semibold mb-4">CEO &amp; Founder</p>
+                <p className="text-white font-semibold mb-4">CEO &amp; Founder</p>
                 <p className="text-slate-300 leading-relaxed mb-4">
                   Musaib founded Deooch after watching businesses waste thousands of hours on repetitive tasks that software could handle in seconds. With a background in engineering, AI, and business-process automation, he set out to bring enterprise-grade automation to small and mid-sized companies—without the enterprise price tag.
                 </p>
@@ -94,7 +94,7 @@ export default function About() {
               </div>
             </div>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 text-slate-300">
-              <a href="mailto:hello@deooch.com" className="text-blue-400 hover:text-blue-300 font-semibold">
+              <a href="mailto:hello@deooch.com" className="text-white hover:text-white font-semibold">
                 📧 hello@deooch.com
               </a>
               <span className="text-slate-600 hidden sm:inline">|</span>
@@ -102,7 +102,7 @@ export default function About() {
                 href="https://www.linkedin.com/in/musaib-khan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 font-semibold"
+                className="text-white hover:text-white font-semibold"
               >
                 in LinkedIn
               </a>
@@ -120,7 +120,7 @@ export default function About() {
                 ['Direct Founder Access', 'You work directly with the person building your automation. No account managers, no support-ticket black holes.'],
                 ['Proven, Measured Results', 'Clients average 28+ hours saved per month at 99%+ accuracy. We agree on the metrics up front and report against them.'],
               ].map(([title, body]) => (
-                <div key={title} className="glass rounded-2xl p-6 hover:border-blue-500/40 transition">
+                <div key={title} className="glass rounded-2xl p-6 hover:border-white/30 transition">
                   <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
                   <p className="text-slate-300 text-sm leading-relaxed">{body}</p>
                 </div>
@@ -128,14 +128,14 @@ export default function About() {
             </div>
           </div>
 
-          <div className="glass border-blue-500/20 rounded-3xl p-12 text-center">
+          <div className="glass border-white/15 rounded-3xl p-12 text-center">
             <h2 className="text-3xl font-bold mb-6 text-white">Ready to Work Together?</h2>
             <p className="text-slate-300 mb-8 text-lg">
               Let&apos;s talk about your automation needs. No long sales process—just a conversation about where you&apos;re losing time.
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-blue-600/30"
+              className="inline-block bg-white hover:bg-neutral-200 text-black font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-black/40"
             >
               Schedule a Call
             </Link>

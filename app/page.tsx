@@ -194,24 +194,24 @@ export default function Home() {
             </p>
           </Reveal>
           <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="glass p-8 rounded-2xl hover:border-blue-500/40 transition-colors">
-              <div className="w-14 h-14 bg-blue-500/15 border border-blue-500/20 rounded-xl flex items-center justify-center text-3xl mb-4">⚡</div>
+            <Card className="glass p-8 rounded-2xl hover:border-white/30 transition-colors">
+              <div className="w-14 h-14 bg-white/10 border border-white/15 rounded-xl flex items-center justify-center text-3xl mb-4">⚡</div>
               <h3 className="text-2xl font-bold text-white mb-3">Save Time</h3>
               <p className="text-slate-300">
                 Eliminate hours of manual data entry, invoice processing, and document scanning. Your team focuses on growth instead of busywork.
               </p>
             </Card>
 
-            <Card className="glass p-8 rounded-2xl hover:border-purple-500/40 transition-colors">
-              <div className="w-14 h-14 bg-purple-500/15 border border-purple-500/20 rounded-xl flex items-center justify-center text-3xl mb-4">🎯</div>
+            <Card className="glass p-8 rounded-2xl hover:border-white/30 transition-colors">
+              <div className="w-14 h-14 bg-white/10 border border-white/15 rounded-xl flex items-center justify-center text-3xl mb-4">🎯</div>
               <h3 className="text-2xl font-bold text-white mb-3">Zero Errors</h3>
               <p className="text-slate-300">
                 AI-powered automation with built-in validation ensures consistent, accurate processing. No human mistakes, no missing data.
               </p>
             </Card>
 
-            <Card className="glass p-8 rounded-2xl hover:border-cyan-500/40 transition-colors">
-              <div className="w-14 h-14 bg-cyan-500/15 border border-cyan-500/20 rounded-xl flex items-center justify-center text-3xl mb-4">💰</div>
+            <Card className="glass p-8 rounded-2xl hover:border-white/30 transition-colors">
+              <div className="w-14 h-14 bg-white/10 border border-white/15 rounded-xl flex items-center justify-center text-3xl mb-4">💰</div>
               <h3 className="text-2xl font-bold text-white mb-3">Cut Costs</h3>
               <p className="text-slate-300">
                 Reduce operational expenses by automating repetitive work. Scale your output without scaling your headcount.
@@ -229,7 +229,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {['QuickBooks', 'Xero', 'NetSuite', 'Stripe', 'HubSpot', 'Salesforce', 'Google Workspace', 'Excel', 'Zapier', 'Make', 'Notion', 'Slack'].map((tool) => (
-              <span key={tool} className="glass rounded-full px-5 py-2.5 text-slate-300 text-sm font-medium hover:border-blue-500/40 hover:text-white transition">
+              <span key={tool} className="glass rounded-full px-5 py-2.5 text-slate-300 text-sm font-medium hover:border-white/30 hover:text-white transition">
                 {tool}
               </span>
             ))}
@@ -240,7 +240,7 @@ export default function Home() {
 
       {/* Security & GDPR */}
       <section className="py-16 px-4">
-        <Reveal className="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-10 border-blue-500/20">
+        <Reveal className="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-10 border-white/15">
           <div className="flex flex-col md:flex-row md:items-center gap-8">
             <div className="flex-1">
               <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Security &amp; Privacy</span>
@@ -278,20 +278,20 @@ export default function Home() {
           </Reveal>
           <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((s) => (
-              <Card key={s.title} className="glass rounded-2xl p-7 hover:border-blue-500/40 transition-colors group">
+              <Card key={s.title} className="glass rounded-2xl p-7 hover:border-white/30 transition-colors group">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center text-2xl flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center text-2xl flex-shrink-0">
                     {s.icon}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">{s.title}</h3>
-                    <p className="text-blue-400 text-sm">{s.tagline}</p>
+                    <p className="text-white text-sm">{s.tagline}</p>
                   </div>
                 </div>
                 <ul className="space-y-2.5">
                   {s.points.map((p, i) => (
                     <li key={i} className="flex gap-2.5 text-slate-300 text-sm leading-relaxed">
-                      <span className="text-blue-400 flex-shrink-0 mt-0.5">→</span>
+                      <span className="text-white flex-shrink-0 mt-0.5">→</span>
                       <span>{p}</span>
                     </li>
                   ))}
@@ -400,7 +400,7 @@ export default function Home() {
                 name="Finance Manager"
                 role="B2B SaaS · Berlin (45 staff)"
                 initials="FM"
-                color="bg-gradient-to-br from-blue-500 to-blue-700"
+                color="bg-gradient-to-br from-neutral-700 to-neutral-900"
                 quote={<>Deooch <HL>saved us 40 hours a month</HL> on invoice processing. The system is reliable and the team was great to work with.</>}
               />
             </Card>
@@ -409,7 +409,7 @@ export default function Home() {
                 name="Operations Director"
                 role="Boutique law firm · 12 attorneys"
                 initials="OD"
-                color="bg-gradient-to-br from-purple-500 to-purple-700"
+                color="bg-gradient-to-br from-neutral-700 to-neutral-900"
                 quote={<>We were drowning in document scanning. Within a month, our team was <HL>80% more efficient</HL>. Highly recommend.</>}
               />
             </Card>
@@ -418,7 +418,7 @@ export default function Home() {
                 name="Ops Manager"
                 role="Freight forwarder · Hamburg (60 staff)"
                 initials="OM"
-                color="bg-gradient-to-br from-blue-500 to-purple-600"
+                color="bg-gradient-to-br from-neutral-700 to-neutral-900"
                 quote={<>Our bills of lading and customs docs used to eat entire days. Deooch <HL>cut document handling by 85%</HL> and disputes dropped with it.</>}
               />
             </Card>
@@ -427,7 +427,7 @@ export default function Home() {
                 name="Founder"
                 role="Consulting firm · 8 staff"
                 initials="FC"
-                color="bg-gradient-to-br from-cyan-500 to-blue-600"
+                color="bg-gradient-to-br from-neutral-700 to-neutral-900"
                 quote={<>Our finance team used to lose <HL>two full days a week</HL> on expense reports. Now it&apos;s basically zero. Game changer.</>}
               />
             </Card>
@@ -436,7 +436,7 @@ export default function Home() {
                 name="Operations Lead"
                 role="Property management firm"
                 initials="OL"
-                color="bg-gradient-to-br from-blue-500 to-blue-700"
+                color="bg-gradient-to-br from-neutral-700 to-neutral-900"
                 quote={<>Every property inquiry now lands in our CRM in minutes. We handle <HL>3x more leads</HL> with the same team.</>}
               />
             </Card>
@@ -445,7 +445,7 @@ export default function Home() {
                 name="COO"
                 role="Healthcare admin group"
                 initials="CO"
-                color="bg-gradient-to-br from-purple-500 to-cyan-600"
+                color="bg-gradient-to-br from-neutral-700 to-neutral-900"
                 quote={<>Reports that took days now take hours, with <HL>100% data consistency</HL>. Our audits are painless now.</>}
               />
             </Card>
@@ -481,7 +481,7 @@ export default function Home() {
                 <details className="glass rounded-2xl p-6 group">
                   <summary className="flex justify-between items-center cursor-pointer text-white font-semibold list-none">
                     <span>{f.q}</span>
-                    <span className="text-blue-400 text-xl transition-transform group-open:rotate-45 flex-shrink-0 ml-4">+</span>
+                    <span className="text-white text-xl transition-transform group-open:rotate-45 flex-shrink-0 ml-4">+</span>
                   </summary>
                   <p className="text-slate-300 leading-relaxed mt-4">{f.a}</p>
                 </details>
@@ -493,7 +493,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-20 px-4">
-        <Reveal className="max-w-4xl mx-auto text-center glass rounded-3xl p-12 border-blue-500/20">
+        <Reveal className="max-w-4xl mx-auto text-center glass rounded-3xl p-12 border-white/15">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">See It Work on Your Own Process — Free</h2>
           <p className="text-xl mb-8 text-slate-300">
             Send us one real, repetitive task and we&apos;ll build a working automation demo of it at no cost. If it saves you time, we scope the full version. No obligation.

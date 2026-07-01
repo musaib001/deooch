@@ -51,7 +51,7 @@ const faqs = [
 function Cell({ value }: { value: string }) {
   if (value === 'yes')
     return (
-      <span className="inline-flex items-center gap-1 text-green-400">
+      <span className="inline-flex items-center gap-1 text-white">
         <Check className="h-4 w-4" /> Yes
       </span>
     );
@@ -63,7 +63,7 @@ function Cell({ value }: { value: string }) {
     );
   if (value === 'partial')
     return (
-      <span className="inline-flex items-center gap-1 text-amber-400">
+      <span className="inline-flex items-center gap-1 text-neutral-400">
         <Minus className="h-4 w-4" /> Limited
       </span>
     );
@@ -199,7 +199,7 @@ export default function Page() {
               <details key={f.q} className="glass group rounded-2xl p-6">
                 <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-white">
                   <span>{f.q}</span>
-                  <span className="ml-4 flex-shrink-0 text-xl text-blue-400 transition-transform group-open:rotate-45">+</span>
+                  <span className="ml-4 flex-shrink-0 text-xl text-white transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-4 leading-relaxed text-slate-300">{f.a}</p>
               </details>
@@ -209,7 +209,7 @@ export default function Page() {
       </section>
 
       <section className="px-4 py-16">
-        <Reveal className="mx-auto max-w-3xl rounded-3xl glass border-blue-500/20 p-10 text-center md:p-12">
+        <Reveal className="mx-auto max-w-3xl rounded-3xl glass border-white/15 p-10 text-center md:p-12">
           <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">Not sure which side you&apos;re on?</h2>
           <p className="mb-8 text-lg text-slate-300">
             Send us one real process. We&apos;ll tell you honestly whether a DIY tool covers it — or build you a free

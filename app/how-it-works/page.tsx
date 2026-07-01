@@ -89,13 +89,13 @@ export default function HowItWorks() {
       <section className="px-4 pb-12">
         <div className="max-w-4xl mx-auto space-y-6">
           {phases.map((p) => (
-            <div key={p.n} className="glass rounded-2xl p-7 md:p-8 hover:border-blue-500/40 transition">
+            <div key={p.n} className="glass rounded-2xl p-7 md:p-8 hover:border-white/30 transition">
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex md:flex-col items-center md:items-start gap-3 md:w-40 flex-shrink-0">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-blue-600/30">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-neutral-700 to-neutral-900 text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-black/40">
                     {p.n}
                   </div>
-                  <span className="text-blue-400 text-sm font-medium">{p.duration}</span>
+                  <span className="text-white text-sm font-medium">{p.duration}</span>
                 </div>
                 <div className="flex-1">
                   <h2 className="text-2xl font-bold text-white mb-2">{p.title}</h2>
@@ -103,7 +103,7 @@ export default function HowItWorks() {
                   <ul className="grid sm:grid-cols-2 gap-2.5">
                     {p.bullets.map((b, i) => (
                       <li key={i} className="flex gap-2.5 text-slate-400 text-sm leading-relaxed">
-                        <span className="text-blue-400 flex-shrink-0 mt-0.5">✓</span>
+                        <span className="text-white flex-shrink-0 mt-0.5">✓</span>
                         <span>{b}</span>
                       </li>
                     ))}
@@ -140,12 +140,12 @@ export default function HowItWorks() {
       </section>
 
       <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center glass rounded-3xl p-12 border-blue-500/20">
+        <div className="max-w-4xl mx-auto text-center glass rounded-3xl p-12 border-white/15">
           <h2 className="text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
           <p className="text-xl mb-8 text-slate-300">Book a free discovery call and we&apos;ll map your first automation.</p>
           <Link
             href="/contact"
-            className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-blue-600/30"
+            className="inline-block bg-white hover:bg-neutral-200 text-black font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-black/40"
           >
             Schedule Your Free Consultation
           </Link>

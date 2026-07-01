@@ -24,7 +24,7 @@ export default function Privacy() {
               <p>
                 This website is operated by Deooch (&quot;we&quot;, &quot;us&quot;). We are the controller responsible for your personal
                 data under the EU General Data Protection Regulation (GDPR). You can reach us at{' '}
-                <a href="mailto:hello@deooch.com" className="text-blue-400 hover:text-blue-300">hello@deooch.com</a> or at the
+                <a href="mailto:hello@deooch.com" className="text-white hover:text-white">hello@deooch.com</a> or at the
                 address listed in our Impressum.
               </p>
             </div>
@@ -80,7 +80,7 @@ export default function Privacy() {
               </ul>
               <p className="mt-2">
                 To exercise any of these, email{' '}
-                <a href="mailto:hello@deooch.com" className="text-blue-400 hover:text-blue-300">hello@deooch.com</a>.
+                <a href="mailto:hello@deooch.com" className="text-white hover:text-white">hello@deooch.com</a>.
               </p>
             </div>
 

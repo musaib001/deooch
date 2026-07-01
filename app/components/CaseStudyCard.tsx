@@ -18,14 +18,14 @@ export default function CaseStudyCard({
   icon,
 }: CaseStudyCardProps) {
   return (
-    <div className="glass rounded-2xl p-7 hover:border-blue-500/40 hover:-translate-y-1 transition-all duration-300">
+    <div className="glass rounded-2xl p-7 hover:border-white/30 hover:-translate-y-1 transition-all duration-300">
       <div className="flex items-center gap-3 mb-5">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center text-2xl">
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center text-2xl">
           {icon}
         </div>
         <div>
           <h3 className="text-lg font-bold text-white leading-tight">{title}</h3>
-          <p className="text-blue-400 text-sm font-medium">{company}</p>
+          <p className="text-white text-sm font-medium">{company}</p>
         </div>
       </div>
 
@@ -45,7 +45,7 @@ export default function CaseStudyCard({
           <p className="text-slate-300 text-sm leading-relaxed">{result}</p>
         </div>
 
-        <div className="bg-gradient-to-r from-blue-500/15 to-purple-500/15 border border-blue-500/20 rounded-xl p-4 mt-2">
+        <div className="bg-gradient-to-r from-white/10 to-white/5 border border-white/15 rounded-xl p-4 mt-2">
           <p className="text-2xl font-bold text-gradient">{savings}</p>
           <p className="text-slate-400 text-sm">saved per month</p>
         </div>

@@ -36,9 +36,9 @@ const stats = [
 function AmbientGlow() {
   const reduce = useReducedMotion();
   const blobs = [
-    { className: 'left-[8%] top-[12%] h-72 w-72 bg-blue-500/25', x: [0, 40, 0], y: [0, 30, 0] },
-    { className: 'right-[10%] top-[20%] h-80 w-80 bg-purple-500/20', x: [0, -30, 0], y: [0, 40, 0] },
-    { className: 'left-1/2 bottom-[5%] h-64 w-64 bg-cyan-400/20', x: [0, 20, 0], y: [0, -30, 0] },
+    { className: 'left-[8%] top-[12%] h-72 w-72 bg-white/20', x: [0, 40, 0], y: [0, 30, 0] },
+    { className: 'right-[10%] top-[20%] h-80 w-80 bg-white/10', x: [0, -30, 0], y: [0, 40, 0] },
+    { className: 'left-1/2 bottom-[5%] h-64 w-64 bg-white/10', x: [0, 20, 0], y: [0, -30, 0] },
   ];
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -106,9 +106,9 @@ export default function Hero() {
           <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm text-slate-300">
             <span className="relative flex h-2 w-2">
               {!reduce && (
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
               )}
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
             </span>
             Now taking new clients · Berlin-based
           </span>
@@ -145,7 +145,7 @@ export default function Hero() {
           variants={item}
           className="mx-auto mt-5 flex max-w-2xl flex-wrap items-center justify-center gap-1.5 text-sm text-slate-400"
         >
-          <Sparkles className="h-4 w-4 text-blue-400" />
+          <Sparkles className="h-4 w-4 text-white" />
           <span className="font-semibold text-white">Try it free:</span>
           send us one real process and we&apos;ll automate it for a live demo —{' '}
           <span className="text-white">free of cost</span>, no commitment.

@@ -32,7 +32,7 @@ export default function Impressum() {
               <h2 className="text-xl font-bold text-white mb-3">Kontakt</h2>
               <p>
                 Email:{' '}
-                <a href="mailto:hello@deooch.com" className="text-blue-400 hover:text-blue-300">hello@deooch.com</a>
+                <a href="mailto:hello@deooch.com" className="text-white hover:text-white">hello@deooch.com</a>
               </p>
             </div>
 

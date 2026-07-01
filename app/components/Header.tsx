@@ -26,11 +26,11 @@ export default function Header() {
           {/* Desktop nav */}
           <div className="hidden md:flex gap-8 items-center">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-blue-400 transition">
+              <Link key={l.href} href={l.href} className="hover:text-white transition">
                 {l.label}
               </Link>
             ))}
-            <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg transition">
+            <Link href="/contact" className="bg-white hover:bg-neutral-200 text-black px-6 py-2 rounded-lg transition">
               Get Started
             </Link>
           </div>
@@ -69,7 +69,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-lg text-center font-semibold transition"
+              className="mt-2 bg-white hover:bg-neutral-200 text-black px-4 py-3 rounded-lg text-center font-semibold transition"
             >
               Get Started
             </Link>

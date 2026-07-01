@@ -134,7 +134,7 @@ export default function WorkflowDemo() {
   const saved = sc.manualMin - Math.round(minutes);
 
   return (
-    <div className="glass rounded-3xl p-6 md:p-10 border-blue-500/20">
+    <div className="glass rounded-3xl p-6 md:p-10 border-white/15">
       {/* Scenario tabs */}
       <div className="flex flex-wrap gap-2 mb-8 justify-center">
         {scenarios.map((s, i) => (
@@ -143,7 +143,7 @@ export default function WorkflowDemo() {
             onClick={() => pick(i)}
             className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border transition ${
               i === sel
-                ? 'bg-blue-500/15 border-blue-500/40 text-white'
+                ? 'bg-white/10 border-white/30 text-white'
                 : 'bg-white/[0.02] border-white/10 text-slate-400 hover:text-white hover:border-white/20'
             }`}
           >
@@ -166,11 +166,11 @@ export default function WorkflowDemo() {
         </div>
         {done ? (
           <div className="flex items-center gap-4">
-            <div className="bg-green-500/10 border border-green-500/30 rounded-xl px-4 py-2.5 text-center">
-              <p className="text-green-400 font-bold leading-tight">≈ {fmt(saved, sc.autoMin)} saved</p>
+            <div className="bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 text-center">
+              <p className="text-white font-bold leading-tight">≈ {fmt(saved, sc.autoMin)} saved</p>
               <p className="text-slate-400 text-xs">{sc.unit}, every time</p>
             </div>
-            <button onClick={() => reset()} className="text-blue-400 hover:text-blue-300 text-sm font-medium whitespace-nowrap">
+            <button onClick={() => reset()} className="text-white hover:text-white text-sm font-medium whitespace-nowrap">
               ↺ Run again
             </button>
           </div>
@@ -178,7 +178,7 @@ export default function WorkflowDemo() {
           <button
             onClick={run}
             disabled={running}
-            className="bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-lg transition shadow-lg shadow-blue-600/30 whitespace-nowrap"
+            className="bg-white hover:bg-neutral-200 disabled:opacity-60 text-black font-semibold px-6 py-3 rounded-lg transition shadow-lg shadow-black/40 whitespace-nowrap"
           >
             {running ? 'Running…' : '▶ Run Automation'}
           </button>
@@ -196,29 +196,29 @@ export default function WorkflowDemo() {
               {i > 0 && (
                 <div className="flex items-center px-1 sm:px-2" aria-hidden>
                   <div className={`h-0.5 w-6 sm:w-10 rounded-full transition-colors duration-300 ${
-                    i <= active ? 'bg-blue-500/60' : 'bg-white/10'
+                    i <= active ? 'bg-white/60' : 'bg-white/10'
                   }`} />
-                  <span className={`text-xs -ml-1 transition-colors duration-300 ${i <= active ? 'text-blue-400' : 'text-slate-600'}`}>▶</span>
+                  <span className={`text-xs -ml-1 transition-colors duration-300 ${i <= active ? 'text-white' : 'text-slate-600'}`}>▶</span>
                 </div>
               )}
               {/* Node */}
               <div
                 className={`w-40 sm:w-44 rounded-xl border p-4 flex flex-col transition-all duration-300 ${
-                  lit ? 'bg-blue-500/10 border-blue-500/40' : 'bg-white/[0.02] border-white/5 opacity-50'
-                } ${current ? 'scale-[1.04] border-blue-400 shadow-lg shadow-blue-600/20' : ''}`}
+                  lit ? 'bg-white/10 border-white/30' : 'bg-white/[0.02] border-white/5 opacity-50'
+                } ${current ? 'scale-[1.04] border-white/30 shadow-lg shadow-black/40' : ''}`}
               >
                 <div className="flex items-center justify-between mb-2.5">
                   <div
                     className={`w-9 h-9 rounded-lg flex items-center justify-center text-lg transition ${
-                      lit ? 'bg-gradient-to-br from-blue-500/30 to-purple-500/30 border border-white/10' : 'bg-white/5'
+                      lit ? 'bg-gradient-to-br from-white/10 to-white/5 border border-white/10' : 'bg-white/5'
                     }`}
                   >
                     {lit ? s.icon : <span className="text-slate-600 text-sm">{i + 1}</span>}
                   </div>
                   {current ? (
-                    <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
                   ) : lit ? (
-                    <span className="text-blue-400 text-sm">✓</span>
+                    <span className="text-white text-sm">✓</span>
                   ) : null}
                 </div>
                 <p className={`font-semibold text-sm leading-tight mb-1 ${lit ? 'text-white' : 'text-slate-500'}`}>{s.title}</p>
