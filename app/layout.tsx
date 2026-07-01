@@ -48,6 +48,7 @@ const orgSchema = {
         "Berlin-based, GDPR-compliant AI automation for SMBs — invoice processing, freight & shipping documents, and healthcare admin.",
       areaServed: "EU",
       address: { "@type": "PostalAddress", addressLocality: "Berlin", addressCountry: "DE" },
+      sameAs: ["https://www.linkedin.com/in/musaib-khan/"],
     },
     {
       "@type": "WebSite",

@@ -1,0 +1,26 @@
+# Deooch
+
+> Berlin-based, GDPR-compliant AI automation studio for SMBs. We build custom automations for invoice processing, freight & shipping documents, and healthcare/hospital admin. Clients average 28+ hours saved per month at 99%+ accuracy. Free working demo of your own process, no commitment.
+
+## Services
+- Invoice Processing — inbox-to-accounting automation with OCR + LLM extraction, PO matching, duplicate detection
+- Document Scanning & Digitization — bulk convert contracts/forms/records into searchable structured data
+- Data Entry & Migration — automated movement, cleaning, and syncing between spreadsheets, CRMs, ERPs
+- Receipt & Expense Automation — photo-to-accounting with policy matching and approval routing
+- Freight & Shipping Document Automation — bills of lading, customs docs, PODs into TMS/ERP
+- Hospital & Healthcare Management — intake, referrals, lab reports, claims into EHR/HIS (GDPR-aware)
+- Reporting & Custom Workflows — bespoke rule-based automations scoped to your process
+
+## Key Pages
+- Home: https://www.deooch.com/
+- How It Works: https://www.deooch.com/how-it-works
+- Case Studies: https://www.deooch.com/case-studies
+- About: https://www.deooch.com/about
+- Contact: https://www.deooch.com/contact
+
+## Facts
+- Location: Berlin, Germany
+- Compliance: GDPR-compliant; DPA & NDA on request; encrypted in transit and at rest; human-in-the-loop review
+- Pricing: fixed one-time build fee, typically €2,000–€8,000 by complexity; optional monthly retainer
+- Timeline: most automations go live in 2–4 weeks
+- Guarantee: results or money back within 30 days; 99%+ accuracy
