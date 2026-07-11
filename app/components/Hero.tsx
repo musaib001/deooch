@@ -120,8 +120,8 @@ export default function Hero() {
         </h1>
 
         <p className="mx-auto mb-4 max-w-3xl text-xl leading-relaxed text-slate-300 md:text-2xl">
-          We build AI automations that handle your invoices, documents, and data entry—so your team
-          stops doing busywork and starts doing real work.
+          We build AI agents that run your repetitive processes end to end — invoicing, marketing,
+          operations, or any workflow unique to your business — across the tools you already use.
         </p>
 
         <p className="mb-10 text-slate-400">

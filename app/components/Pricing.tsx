@@ -47,10 +47,10 @@ const tiers = [
   },
 ];
 
-const guarantees = [
-  ['🎯', 'Results or Money Back', 'If it doesn’t hit the agreed targets within 30 days, we fix it at no extra cost — or you don’t pay.'],
-  ['📊', '99%+ Accuracy', 'Built to human-level reliability, with uncertain cases flagged for review rather than guessed.'],
-  ['🔒', 'Data Security', 'Encrypted in transit and at rest. We work within your systems and follow GDPR practices.'],
+const guarantees: [string, string][] = [
+  ['Results or Money Back', 'If it doesn’t hit the agreed targets within 30 days, we fix it at no extra cost — or you don’t pay.'],
+  ['99%+ Accuracy', 'Built to human-level reliability, with uncertain cases flagged for review rather than guessed.'],
+  ['Data Security', 'Encrypted in transit and at rest. We work within your systems and follow GDPR practices.'],
 ];
 
 export default function Pricing() {
@@ -104,11 +104,10 @@ export default function Pricing() {
           <h3 className="text-2xl font-bold text-white">Backed by guarantees</h3>
         </Reveal>
         <Stagger className="grid md:grid-cols-3 gap-6">
-          {guarantees.map(([icon, title, body]) => (
-            <Card key={title} className="glass rounded-2xl p-6">
-              <div className="text-3xl mb-3">{icon}</div>
-              <h4 className="font-bold text-white mb-2">{title}</h4>
-              <p className="text-slate-400 text-sm">{body}</p>
+          {guarantees.map(([title, body]) => (
+            <Card key={title} className="glass rounded-2xl p-6 border-t-2 border-t-white/20">
+              <h4 className="text-lg font-bold text-white mb-2">{title}</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">{body}</p>
             </Card>
           ))}
         </Stagger>

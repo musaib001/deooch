@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 interface CaseStudyCardProps {
   title: string;
   company: string;
@@ -5,7 +7,7 @@ interface CaseStudyCardProps {
   solution: string;
   result: string;
   savings: string;
-  icon: string;
+  icon: ReactNode;
 }
 
 export default function CaseStudyCard({
@@ -20,7 +22,7 @@ export default function CaseStudyCard({
   return (
     <div className="glass rounded-2xl p-7 hover:border-white/30 hover:-translate-y-1 transition-all duration-300">
       <div className="flex items-center gap-3 mb-5">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center text-2xl">
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center text-white">
           {icon}
         </div>
         <div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Mail, MapPin } from 'lucide-react';
 
 export const metadata = {
   title: 'About Deooch — AI Automation for SMBs, Founded in Berlin',
@@ -94,8 +95,8 @@ export default function About() {
               </div>
             </div>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 text-slate-300">
-              <a href="mailto:hello@deooch.com" className="text-white hover:text-white font-semibold">
-                📧 hello@deooch.com
+              <a href="mailto:hello@deooch.com" className="inline-flex items-center gap-2 text-white hover:text-white font-semibold">
+                <Mail className="h-4 w-4" aria-hidden /> hello@deooch.com
               </a>
               <span className="text-slate-600 hidden sm:inline">|</span>
               <a
@@ -104,10 +105,10 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="text-white hover:text-white font-semibold"
               >
-                in LinkedIn
+                LinkedIn
               </a>
               <span className="text-slate-600 hidden sm:inline">|</span>
-              <p>📍 Berlin, Germany</p>
+              <p className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" aria-hidden /> Berlin, Germany</p>
             </div>
           </div>
 

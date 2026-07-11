@@ -7,7 +7,7 @@ export type Solution = {
 
 export const solutions: Solution[] = [
   {
-    icon: '📄',
+    icon: 'receipt',
     title: 'Invoice Processing',
     tagline: 'From inbox to accounting system — untouched by human hands.',
     points: [
@@ -18,7 +18,18 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    icon: '📑',
+    icon: 'megaphone',
+    title: 'Marketing & Sales Ops',
+    tagline: 'Campaigns, leads and follow-ups that run themselves.',
+    points: [
+      'Route and enrich inbound leads, then sync them straight into your CRM',
+      'Trigger personalised follow-up sequences the moment a lead qualifies',
+      'Keep CRM records clean — dedupe, update stages and log activity automatically',
+      'Assemble recurring campaign and pipeline reports from every source you use',
+    ],
+  },
+  {
+    icon: 'scan',
     title: 'Document Scanning & Digitization',
     tagline: 'Turn paper and PDFs into searchable, structured data.',
     points: [
@@ -29,7 +40,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    icon: '🗂️',
+    icon: 'database',
     title: 'Data Entry & Migration',
     tagline: 'Stop copy-pasting between systems.',
     points: [
@@ -40,7 +51,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    icon: '💳',
+    icon: 'card',
     title: 'Receipt & Expense Automation',
     tagline: 'Expense reports that file themselves.',
     points: [
@@ -51,7 +62,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    icon: '🚚',
+    icon: 'truck',
     title: 'Freight & Shipping Document Automation',
     tagline: 'Bills of lading, customs docs and PODs — handled.',
     points: [
@@ -62,7 +73,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    icon: '🏥',
+    icon: 'health',
     title: 'Hospital & Healthcare Management',
     tagline: 'Less admin at the desk, more time with patients.',
     points: [
@@ -73,14 +84,14 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    icon: '📊',
-    title: 'Reporting & Custom Workflows',
-    tagline: 'If it follows rules, we can automate it.',
+    icon: 'workflow',
+    title: 'Any Custom Workflow',
+    tagline: 'The categories above are starting points — if a process follows rules, we can automate it.',
     points: [
+      'Bespoke automations scoped to a process unique to your business',
+      'Connect tools that don\'t talk to each other via custom integrations',
       'Auto-generate recurring reports from multiple data sources',
-      'Extract structured data from any document or system',
-      "Connect tools that don't talk to each other via custom integrations",
-      'Bespoke automations scoped to your exact process',
+      'Extract structured data from any document, system, or inbox',
     ],
   },
 ];

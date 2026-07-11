@@ -1,64 +1,84 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import {
+  ReceiptText, Truck, HeartPulse, Megaphone, Inbox, ScanLine, Link2,
+  ShieldCheck, Database, CheckCircle2, Calculator, Mail, type LucideIcon,
+} from 'lucide-react';
 
 type Scenario = {
   id: string;
   label: string;
-  icon: string;
+  icon: LucideIcon;
   manualMin: number;
   autoMin: number;
   unit: string;
-  steps: { icon: string; title: string; detail: string }[];
+  steps: { icon: LucideIcon; title: string; detail: string }[];
 };
 
 const scenarios: Scenario[] = [
   {
     id: 'invoice',
     label: 'Invoices',
-    icon: '📄',
+    icon: ReceiptText,
     manualMin: 240,
     autoMin: 8,
     unit: 'per invoice batch',
     steps: [
-      { icon: '📥', title: 'Invoice received', detail: 'New supplier invoice lands in accounts@ inbox' },
-      { icon: '🔍', title: 'Extracting data', detail: 'AI reads vendor, line items, VAT, totals & PO number' },
-      { icon: '🔗', title: 'Three-way matching', detail: 'Validates against purchase order & goods received' },
-      { icon: '🛡️', title: 'Checking duplicates', detail: 'Flags anything already paid or out of policy' },
-      { icon: '📊', title: 'Posting to Xero', detail: 'Clean entry pushed straight into accounting' },
-      { icon: '✅', title: 'Done', detail: 'Approved and filed — no human keystrokes' },
+      { icon: Inbox, title: 'Invoice received', detail: 'New supplier invoice lands in accounts@ inbox' },
+      { icon: ScanLine, title: 'Extracting data', detail: 'AI reads vendor, line items, VAT, totals & PO number' },
+      { icon: Link2, title: 'Three-way matching', detail: 'Validates against purchase order & goods received' },
+      { icon: ShieldCheck, title: 'Checking duplicates', detail: 'Flags anything already paid or out of policy' },
+      { icon: Database, title: 'Posting to Xero', detail: 'Clean entry pushed straight into accounting' },
+      { icon: CheckCircle2, title: 'Done', detail: 'Approved and filed — no human keystrokes' },
+    ],
+  },
+  {
+    id: 'marketing',
+    label: 'Marketing / CRM',
+    icon: Megaphone,
+    manualMin: 25,
+    autoMin: 2,
+    unit: 'per lead',
+    steps: [
+      { icon: Inbox, title: 'Lead captured', detail: 'A form, ad, or inbound email creates a new lead' },
+      { icon: ScanLine, title: 'Enriched & scored', detail: 'AI adds firmographics and ranks fit against your ICP' },
+      { icon: Link2, title: 'Routed to owner', detail: 'Assigned to the right rep by territory or segment' },
+      { icon: Database, title: 'Synced to CRM', detail: 'Clean record written to HubSpot / Salesforce' },
+      { icon: Mail, title: 'Follow-up sent', detail: 'Personalised sequence triggered automatically' },
+      { icon: CheckCircle2, title: 'Logged & tracked', detail: 'Activity logged; only edge cases flagged for a human' },
     ],
   },
   {
     id: 'freight',
     label: 'Freight Docs',
-    icon: '🚚',
+    icon: Truck,
     manualMin: 90,
     autoMin: 4,
     unit: 'per shipment',
     steps: [
-      { icon: '📥', title: 'Bill of lading arrives', detail: 'BOL, packing list & customs forms hit the inbox' },
-      { icon: '🔍', title: 'Reading documents', detail: 'AI extracts shipper, weight, HS codes & charges' },
-      { icon: '🔗', title: 'Matching booking', detail: 'Cross-checks against the booking & shipment record' },
-      { icon: '🧮', title: 'Calculating charges', detail: 'Freight, duties & demurrage computed and flagged' },
-      { icon: '📊', title: 'Posting to TMS', detail: 'Clean entry pushed into your TMS / ERP' },
-      { icon: '✅', title: 'Invoice triggered', detail: 'POD confirmed → invoice goes out same day' },
+      { icon: Inbox, title: 'Bill of lading arrives', detail: 'BOL, packing list & customs forms hit the inbox' },
+      { icon: ScanLine, title: 'Reading documents', detail: 'AI extracts shipper, weight, HS codes & charges' },
+      { icon: Link2, title: 'Matching booking', detail: 'Cross-checks against the booking & shipment record' },
+      { icon: Calculator, title: 'Calculating charges', detail: 'Freight, duties & demurrage computed and flagged' },
+      { icon: Database, title: 'Posting to TMS', detail: 'Clean entry pushed into your TMS / ERP' },
+      { icon: CheckCircle2, title: 'Invoice triggered', detail: 'POD confirmed → invoice goes out same day' },
     ],
   },
   {
     id: 'hospital',
     label: 'Patient Intake',
-    icon: '🏥',
+    icon: HeartPulse,
     manualMin: 30,
     autoMin: 2,
     unit: 'per patient',
     steps: [
-      { icon: '📥', title: 'Intake form received', detail: 'New patient form, referral & lab report come in' },
-      { icon: '🔍', title: 'Extracting details', detail: 'AI reads demographics, history & insurance info' },
-      { icon: '🛡️', title: 'Eligibility check', detail: 'Verifies insurance coverage & flags gaps' },
-      { icon: '🔗', title: 'Coding from notes', detail: 'Suggests diagnosis & procedure codes for review' },
-      { icon: '📊', title: 'Writing to EHR', detail: 'Structured record pushed into your EHR / HIS' },
-      { icon: '✅', title: 'Ready for clinician', detail: 'Sensitive cases routed to staff — never guessed' },
+      { icon: Inbox, title: 'Intake form received', detail: 'New patient form, referral & lab report come in' },
+      { icon: ScanLine, title: 'Extracting details', detail: 'AI reads demographics, history & insurance info' },
+      { icon: ShieldCheck, title: 'Eligibility check', detail: 'Verifies insurance coverage & flags gaps' },
+      { icon: Link2, title: 'Coding from notes', detail: 'Suggests diagnosis & procedure codes for review' },
+      { icon: Database, title: 'Writing to EHR', detail: 'Structured record pushed into your EHR / HIS' },
+      { icon: CheckCircle2, title: 'Ready for clinician', detail: 'Sensitive cases routed to staff — never guessed' },
     ],
   },
 ];
@@ -147,7 +167,7 @@ export default function WorkflowDemo() {
                 : 'bg-white/[0.02] border-white/10 text-slate-400 hover:text-white hover:border-white/20'
             }`}
           >
-            <span>{s.icon}</span>
+            <s.icon className="h-4 w-4" aria-hidden />
             {s.label}
           </button>
         ))}
@@ -213,7 +233,7 @@ export default function WorkflowDemo() {
                       lit ? 'bg-gradient-to-br from-white/10 to-white/5 border border-white/10' : 'bg-white/5'
                     }`}
                   >
-                    {lit ? s.icon : <span className="text-slate-600 text-sm">{i + 1}</span>}
+                    {lit ? <s.icon className="h-4 w-4 text-white" aria-hidden /> : <span className="text-slate-600 text-sm">{i + 1}</span>}
                   </div>
                   {current ? (
                     <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />

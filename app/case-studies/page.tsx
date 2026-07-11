@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CaseStudyCard from '../components/CaseStudyCard';
+import { ScanText, Megaphone, CreditCard, Mail, ClipboardList, BarChart3 } from 'lucide-react';
 
 export const metadata = {
   title: 'Case Studies — AI Automation Results | Deooch',
@@ -78,7 +79,7 @@ export default function CaseStudies() {
           <h2 className="text-3xl font-bold text-white mb-10 text-center">More Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <CaseStudyCard
-              icon="📑"
+              icon={<ScanText className="h-6 w-6" aria-hidden />}
               title="Document Digitization"
               company="Boutique Law Firm (12 attorneys)"
               challenge="Paralegals scanned and hand-filed ~2,000 case documents a month. Finding a document took 15+ minutes; compliance audits ate entire days."
@@ -88,7 +89,7 @@ export default function CaseStudies() {
             />
 
             <CaseStudyCard
-              icon="🗂️"
+              icon={<Megaphone className="h-6 w-6" aria-hidden />}
               title="Lead Capture & CRM Sync"
               company="Digital Marketing Agency (30 reps)"
               challenge="200+ weekly leads from forms and emails were copied into HubSpot by hand. Reps saw leads a day late and ~12% of records had typos."
@@ -98,7 +99,7 @@ export default function CaseStudies() {
             />
 
             <CaseStudyCard
-              icon="💳"
+              icon={<CreditCard className="h-6 w-6" aria-hidden />}
               title="Expense Report Automation"
               company="Management Consultancy (60 staff)"
               challenge="Consultants emailed receipt photos; finance spent 2 days/week keying them in, matching cards, and chasing missing info before reimbursing."
@@ -108,7 +109,7 @@ export default function CaseStudies() {
             />
 
             <CaseStudyCard
-              icon="📧"
+              icon={<Mail className="h-6 w-6" aria-hidden />}
               title="Inbox-to-Database Pipeline"
               company="Real Estate Agency (8 agents)"
               challenge="Property inquiries arrived as free-text emails. Manual entry into the client database was slow, and hot leads went cold over weekends."
@@ -118,7 +119,7 @@ export default function CaseStudies() {
             />
 
             <CaseStudyCard
-              icon="📋"
+              icon={<ClipboardList className="h-6 w-6" aria-hidden />}
               title="Onboarding Form Processing"
               company="B2B SaaS Onboarding Team"
               challenge="New-customer signup forms had errors and gaps. Manual validation and account setup slowed onboarding and hurt early activation."
@@ -128,7 +129,7 @@ export default function CaseStudies() {
             />
 
             <CaseStudyCard
-              icon="📊"
+              icon={<BarChart3 className="h-6 w-6" aria-hidden />}
               title="Automated Compliance Reporting"
               company="Healthcare Admin Company"
               challenge="Staff manually pulled data from patient forms and insurer documents to compile reports. It took days and inconsistencies triggered audit findings."

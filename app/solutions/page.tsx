@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { Reveal, Stagger, Card } from '../components/Motion';
 import { Button } from '@/components/ui/button';
 import { solutions } from '../data/solutions';
+import Icon from '../components/Icon';
 
 const SITE = 'https://www.deooch.com';
 
@@ -50,8 +51,8 @@ export default function Solutions() {
             {solutions.map((s) => (
               <Card key={s.title} className="glass group rounded-2xl p-7 transition-colors hover:border-white/30">
                 <div className="mb-4 flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 text-2xl">
-                    {s.icon}
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5">
+                    <Icon name={s.icon} className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <h2 className="text-xl font-bold text-white">{s.title}</h2>

@@ -10,11 +10,23 @@ import { Button } from '@/components/ui/button';
 import { solutions as services } from './data/solutions';
 import LogoMarquee from './components/LogoMarquee';
 import Pricing from './components/Pricing';
+import Icon from './components/Icon';
+import {
+  Zap, Brain, Share2, UserCheck, Clock, ShieldCheck, TrendingDown,
+  Lock, FileText, ReceiptText, ScanText, Truck,
+} from 'lucide-react';
 
 export const metadata = {
-  title: 'Deooch — AI Automation for Invoices, Freight Docs & Healthcare',
-  description: 'Berlin-based, GDPR-compliant AI automation for SMBs. We automate invoice processing, freight & shipping documents, and hospital admin — clients save 28+ hours/month at 99%+ accuracy. Free working demo of your process.',
+  title: 'Deooch — Done-For-You AI Automation for Any Business Process',
+  description: 'Berlin-based, GDPR-compliant AI automation for SMBs. We build AI agents that run your repetitive workflows end to end — invoicing, marketing, operations, or any custom process. Clients save 28+ hours/month at 99%+ accuracy. Free working demo of your process.',
 };
+
+const steps = [
+  { Ico: Zap, title: 'Trigger', body: 'A document, event, email, or schedule kicks it off.' },
+  { Ico: Brain, title: 'AI understands', body: 'Reads the context and decides what needs to happen.' },
+  { Ico: Share2, title: 'Acts across your tools', body: 'Updates your CRM, ERP, accounting, or any connected system.' },
+  { Ico: UserCheck, title: 'Humans handle exceptions', body: 'Only uncertain cases reach a person — nothing is guessed.' },
+];
 
 const faqs = [
   {
@@ -92,6 +104,31 @@ export default function Home() {
       {/* Trusted by — animated logo marquee */}
       <LogoMarquee />
 
+      {/* How it actually works — process-agnostic 4-step model */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="text-center mb-4">
+            <span className="text-gradient font-semibold uppercase tracking-wide text-sm">How It Actually Works</span>
+            <h2 className="text-4xl font-bold text-white mt-2">One model, any repetitive process</h2>
+            <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
+              Invoicing, marketing, warehouse ops, or something only your business does — every automation we build runs the same four steps.
+            </p>
+          </Reveal>
+          <Stagger className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-10">
+            {steps.map(({ Ico, title, body }, i) => (
+              <Card key={title} className="glass p-6 rounded-2xl relative">
+                <span className="absolute top-5 right-5 text-sm font-bold text-slate-600">0{i + 1}</span>
+                <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-4">
+                  <Ico className="h-6 w-6 text-white" aria-hidden />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">{body}</p>
+              </Card>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
       {/* Interactive workflow demo */}
       <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto">
@@ -121,7 +158,7 @@ export default function Home() {
           </Reveal>
           <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="glass p-8 rounded-2xl hover:border-white/30 transition-colors">
-              <div className="w-14 h-14 bg-white/10 border border-white/15 rounded-xl flex items-center justify-center text-3xl mb-4">⚡</div>
+              <div className="w-14 h-14 bg-white/10 border border-white/15 rounded-xl flex items-center justify-center mb-4"><Clock className="h-7 w-7 text-white" aria-hidden /></div>
               <h3 className="text-2xl font-bold text-white mb-3">Save Time</h3>
               <p className="text-slate-300">
                 Eliminate hours of manual data entry, invoice processing, and document scanning. Your team focuses on growth instead of busywork.
@@ -129,7 +166,7 @@ export default function Home() {
             </Card>
 
             <Card className="glass p-8 rounded-2xl hover:border-white/30 transition-colors">
-              <div className="w-14 h-14 bg-white/10 border border-white/15 rounded-xl flex items-center justify-center text-3xl mb-4">🎯</div>
+              <div className="w-14 h-14 bg-white/10 border border-white/15 rounded-xl flex items-center justify-center mb-4"><ShieldCheck className="h-7 w-7 text-white" aria-hidden /></div>
               <h3 className="text-2xl font-bold text-white mb-3">Zero Errors</h3>
               <p className="text-slate-300">
                 AI-powered automation with built-in validation ensures consistent, accurate processing. No human mistakes, no missing data.
@@ -137,7 +174,7 @@ export default function Home() {
             </Card>
 
             <Card className="glass p-8 rounded-2xl hover:border-white/30 transition-colors">
-              <div className="w-14 h-14 bg-white/10 border border-white/15 rounded-xl flex items-center justify-center text-3xl mb-4">💰</div>
+              <div className="w-14 h-14 bg-white/10 border border-white/15 rounded-xl flex items-center justify-center mb-4"><TrendingDown className="h-7 w-7 text-white" aria-hidden /></div>
               <h3 className="text-2xl font-bold text-white mb-3">Cut Costs</h3>
               <p className="text-slate-300">
                 Reduce operational expenses by automating repetitive work. Scale your output without scaling your headcount.
@@ -177,16 +214,19 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-3 md:w-72 flex-shrink-0">
               {[
-                ['🇪🇺', 'GDPR compliant'],
-                ['🔒', 'Encrypted end-to-end'],
-                ['📄', 'DPA & NDA on request'],
-                ['👤', 'Human-in-the-loop'],
-              ].map(([icon, label]) => (
-                <div key={label} className="bg-white/[0.03] border border-white/10 rounded-xl p-4 text-center">
-                  <div className="text-2xl mb-1">{icon}</div>
-                  <p className="text-slate-300 text-xs font-medium">{label}</p>
-                </div>
-              ))}
+                [ShieldCheck, 'GDPR compliant'],
+                [Lock, 'Encrypted end-to-end'],
+                [FileText, 'DPA & NDA on request'],
+                [UserCheck, 'Human-in-the-loop'],
+              ].map(([Ico, label]) => {
+                const C = Ico as typeof ShieldCheck;
+                return (
+                  <div key={label as string} className="bg-white/[0.03] border border-white/10 rounded-xl p-4 text-center flex flex-col items-center">
+                    <C className="h-6 w-6 text-white mb-2" aria-hidden />
+                    <p className="text-slate-300 text-xs font-medium">{label as string}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </Reveal>
@@ -199,15 +239,15 @@ export default function Home() {
             <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Our Solutions</span>
             <h2 className="text-4xl font-bold text-white mt-2">What can Deooch automate for you?</h2>
             <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
-              Every solution below is custom-built around your existing tools and process. Here&apos;s exactly what each one does.
+              These are common starting points — not a fixed menu. If a process follows rules, we can automate it, even if it isn&apos;t listed here. Every build is custom-fit to your existing tools.
             </p>
           </Reveal>
           <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((s) => (
               <Card key={s.title} className="glass rounded-2xl p-7 hover:border-white/30 transition-colors group">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center text-2xl flex-shrink-0">
-                    {s.icon}
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name={s.icon} className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">{s.title}</h3>
@@ -238,7 +278,7 @@ export default function Home() {
           <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <Card>
               <CaseStudyCard
-                icon="📄"
+                icon={<ReceiptText className="h-6 w-6" aria-hidden />}
                 title="Invoice Automation"
                 company="B2B SaaS, Berlin (45 staff)"
                 challenge="The finance team manually keyed ~520 supplier invoices a month into Xero — roughly 40 hours, with frequent duplicate payments and late-payment fees."
@@ -250,7 +290,7 @@ export default function Home() {
 
             <Card>
               <CaseStudyCard
-                icon="📑"
+                icon={<ScanText className="h-6 w-6" aria-hidden />}
                 title="Document Processing"
                 company="Boutique Law Firm (12 attorneys)"
                 challenge="Paralegals scanned and hand-filed ~2,000 case documents monthly. Finding the right document took 15+ minutes and compliance audits were painful."
@@ -262,7 +302,7 @@ export default function Home() {
 
             <Card>
               <CaseStudyCard
-                icon="🚚"
+                icon={<Truck className="h-6 w-6" aria-hidden />}
                 title="Freight Document Automation"
                 company="Logistics Forwarder, Hamburg (60 staff)"
                 challenge="Ops keyed ~1,400 bills of lading, customs forms and PODs a month into the TMS by hand — slow, error-prone, and a constant source of disputed charges and demurrage."
@@ -387,6 +427,31 @@ export default function Home() {
             ))}
           </Stagger>
         </div>
+      </section>
+
+      {/* Founder — who's behind this */}
+      <section className="py-16 px-4">
+        <Reveal className="max-w-4xl mx-auto glass rounded-3xl p-8 md:p-10 border-white/15">
+          <span className="text-gradient font-semibold uppercase tracking-wide text-sm">Who You Work With</span>
+          <div className="mt-4 flex flex-col md:flex-row gap-6 md:items-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-neutral-600 to-neutral-900 flex items-center justify-center text-2xl font-bold text-white flex-shrink-0 shadow-lg shadow-black/40">
+              MK
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold text-white">Musaib Khan</h3>
+              <p className="text-white font-semibold mb-3">Founder · AI/ML engineering &amp; B2B automation · Berlin</p>
+              <p className="text-slate-300 leading-relaxed">
+                You work directly with the person building your automation — no account managers, no support-ticket black holes. Deooch is bootstrapped and revenue-generating, so every workflow is scoped and run hands-on.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm">
+                <Link href="/about" className="text-white font-semibold hover:underline">More about Deooch →</Link>
+                <a href="https://www.linkedin.com/in/musaib-khan/" target="_blank" rel="noopener noreferrer" className="text-slate-400 font-semibold hover:text-white">
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* CTA Section */}
