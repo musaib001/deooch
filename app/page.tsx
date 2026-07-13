@@ -255,13 +255,21 @@ export default function Home() {
                   </div>
                 </div>
                 <ul className="space-y-2.5">
-                  {s.points.map((p, i) => (
+                  {s.points.slice(0, 4).map((p, i) => (
                     <li key={i} className="flex gap-2.5 text-slate-300 text-sm leading-relaxed">
                       <span className="text-white flex-shrink-0 mt-0.5">→</span>
                       <span>{p}</span>
                     </li>
                   ))}
                 </ul>
+                {s.slug && (
+                  <Link
+                    href={`/solutions/${s.slug}`}
+                    className="mt-4 inline-block text-sm font-semibold text-white hover:underline"
+                  >
+                    See how it works, integrations & FAQs →
+                  </Link>
+                )}
               </Card>
             ))}
           </Stagger>

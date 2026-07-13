@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Deooch — AI Automation for Invoices, Freight Docs & Healthcare';
+export const alt = 'Deooch — Done-For-You AI Automation Agency';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -39,7 +39,7 @@ export default function OpengraphImage() {
           <span>in Weeks</span>
         </div>
         <div style={{ fontSize: 34, color: '#94a3b8', marginTop: 28 }}>
-          Invoices · Freight docs · Healthcare admin — 28+ hrs saved/mo at 99%+ accuracy
+          Invoicing · Marketing ops · Logistics · Any custom workflow — 28+ hrs saved/mo at 99%+ accuracy
         </div>
       </div>
     ),

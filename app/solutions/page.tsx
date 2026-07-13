@@ -26,6 +26,7 @@ export default function Solutions() {
         '@type': 'Service',
         name: s.title,
         description: s.tagline,
+        ...(s.slug && { url: `${SITE}/solutions/${s.slug}` }),
         provider: { '@id': `${SITE}/#organization` },
         areaServed: 'EU',
       },
@@ -67,6 +68,14 @@ export default function Solutions() {
                     </li>
                   ))}
                 </ul>
+                {s.slug && (
+                  <Link
+                    href={`/solutions/${s.slug}`}
+                    className="mt-5 inline-block text-sm font-semibold text-white hover:underline"
+                  >
+                    See how it works, integrations & FAQs →
+                  </Link>
+                )}
               </Card>
             ))}
           </Stagger>
