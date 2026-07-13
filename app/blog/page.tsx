@@ -5,9 +5,9 @@ import { Reveal, Stagger, Card } from '../components/Motion';
 import { posts } from './posts';
 
 export const metadata = {
-  title: 'Blog — Automation Guides & Insights | Deooch',
+  title: 'Blog — AI Automation & Workflow Automation Guides | Deooch',
   description:
-    'Practical guides on automating invoices, documents, and back-office work — from the team that builds AI automations for SMBs.',
+    'Practical guides on automating invoices, marketing ops, documents, and back-office work — from the team that builds AI automation for SMBs.',
   alternates: { canonical: '/blog' },
 };
 

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -17,21 +16,21 @@ const SITE = "https://www.deooch.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
-  title: "Deooch - AI Automation for Business",
-  description: "Save hours of manual work with AI-powered automation. Invoice processing, document scanning, data entry—automated.",
+  title: "Deooch - Done-For-You AI Automation Agency for Any Business Process",
+  description: "Save hours of manual work with done-for-you AI automation. Invoicing, marketing & sales ops, logistics, or any custom workflow—automated.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "Deooch",
     url: SITE,
-    title: "Deooch — AI Automation for Invoices, Freight Docs & Healthcare",
-    description: "Berlin-based, GDPR-compliant AI automation for SMBs. Clients save 28+ hours/month at 99%+ accuracy.",
+    title: "Deooch — Done-For-You AI Automation Agency",
+    description: "Berlin-based, GDPR-compliant AI automation agency for SMBs. We build AI agents that run invoicing, marketing, operations, or any custom workflow. Clients save 28+ hours/month at 99%+ accuracy.",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deooch — AI Automation for SMBs",
-    description: "Berlin-based, GDPR-compliant AI automation. Save 28+ hours/month at 99%+ accuracy.",
+    title: "Deooch — AI Automation Agency for SMBs",
+    description: "Berlin-based, GDPR-compliant AI automation agency. Any repetitive workflow, automated. Save 28+ hours/month at 99%+ accuracy.",
   },
 };
 
@@ -46,7 +45,7 @@ const orgSchema = {
       url: SITE,
       logo: `${SITE}/logo.png`,
       description:
-        "Berlin-based, GDPR-compliant AI automation for SMBs — invoice processing, freight & shipping documents, and healthcare admin.",
+        "Berlin-based, GDPR-compliant AI automation agency for SMBs — invoicing, marketing & sales ops, logistics documents, healthcare admin, and any custom workflow.",
       areaServed: "EU",
       address: { "@type": "PostalAddress", addressLocality: "Berlin", addressCountry: "DE" },
       sameAs: ["https://www.linkedin.com/in/musaib-khan/"],
@@ -62,8 +61,10 @@ const orgSchema = {
       sameAs: ["https://www.linkedin.com/in/musaib-khan/"],
       knowsAbout: [
         "AI automation",
-        "invoice processing",
         "business process automation",
+        "invoice processing",
+        "marketing automation",
+        "workflow automation",
         "document digitization",
       ],
     },
@@ -93,17 +94,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
         {children}
-        <Script id="tawk-to" strategy="afterInteractive">
-          {`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a45429cb271bd1d477e992d/1jsf8oe1l';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();`}
-        </Script>
       </body>
     </html>
   );

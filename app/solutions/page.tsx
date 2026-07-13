@@ -9,9 +9,9 @@ import Icon from '../components/Icon';
 const SITE = 'https://www.deooch.com';
 
 export const metadata = {
-  title: 'Solutions — What We Automate | Deooch',
+  title: 'Solutions — Invoice, Marketing, Freight & Custom Workflow Automation | Deooch',
   description:
-    'Every Deooch solution is custom-built around your existing tools: invoice processing, document digitization, data entry, expenses, freight docs, healthcare admin, and bespoke workflows.',
+    'Every Deooch solution is custom-built around your existing tools: invoice processing, marketing & sales ops (lead routing, CRM automation), document digitization, data entry, expenses, freight & logistics docs, healthcare admin, and any bespoke workflow.',
   alternates: { canonical: '/solutions' },
 };
 

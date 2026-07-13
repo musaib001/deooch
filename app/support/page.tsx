@@ -3,26 +3,26 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Reveal, Stagger, Card } from '../components/Motion';
 import { Button } from '@/components/ui/button';
+import { Mail, CalendarDays, type LucideIcon } from 'lucide-react';
 
 export const metadata = {
   title: 'Support — Get Help | Deooch',
   description:
-    'Need help with your Deooch automation? Reach us by email or live chat, check common questions, and see our response times and support commitments.',
+    'Need help with your Deooch automation? Reach us by email, check common questions, and see our response times and support commitments.',
   alternates: { canonical: '/support' },
 };
 
-const channels = [
-  ['💬', 'Live chat', 'Fastest for quick questions — use the chat widget in the bottom corner of any page.', null],
-  ['📧', 'Email', 'For anything detailed or account-specific, email us and we’ll reply within one business day.', 'mailto:hello@deooch.com'],
-  ['📅', 'Book a call', 'Prefer to talk it through? Schedule a call and we’ll walk through it live.', '/contact'],
+const channels: [LucideIcon, string, string, string | null][] = [
+  [Mail, 'Email', 'For anything detailed or account-specific, email us and we’ll reply within one business day.', 'mailto:hello@deooch.com'],
+  [CalendarDays, 'Book a call', 'Prefer to talk it through? Schedule a call and we’ll walk through it live.', '/contact'],
 ];
 
 const faqs = [
   ['My automation flagged something for review — what do I do?', 'That’s by design. Anything the AI isn’t confident about is routed to a human instead of guessed. Open the flagged item, confirm or correct it, and it continues. If you see the same flag repeatedly, tell us and we’ll tune the rule.'],
   ['Something changed in one of our tools and the automation broke.', 'Message us right away with what changed (a new form field, a vendor format, an API update). On Growth and Custom plans this is covered; we’ll adjust the automation and confirm once it’s stable again.'],
-  ['How do I request a change to an existing automation?', 'Email us or use live chat with the change you need. We’ll scope it, confirm whether it’s within your current plan, and give you a timeline before starting.'],
-  ['What are your support hours?', 'We’re Berlin-based and respond during EU business hours. Email and chat messages sent outside those hours are answered the next business day.'],
-  ['Is my data safe when I share it for support?', 'Yes — the same GDPR practices apply. Don’t paste sensitive data into chat; we’ll point you to a secure channel if a support case needs real documents.'],
+  ['How do I request a change to an existing automation?', 'Email us with the change you need. We’ll scope it, confirm whether it’s within your current plan, and give you a timeline before starting.'],
+  ['What are your support hours?', 'We’re Berlin-based and respond during EU business hours. Messages sent outside those hours are answered the next business day.'],
+  ['Is my data safe when I share it for support?', 'Yes — the same GDPR practices apply. Don’t paste sensitive data into email; we’ll point you to a secure channel if a support case needs real documents.'],
 ];
 
 export default function Support() {
@@ -40,15 +40,15 @@ export default function Support() {
             </p>
           </Reveal>
 
-          <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
-            {channels.map(([icon, title, body, href]) => (
-              <Card key={title as string} className="glass rounded-2xl p-6">
-                <div className="mb-3 text-3xl">{icon}</div>
+          <Stagger className="mt-12 grid gap-6 md:grid-cols-2 max-w-2xl mx-auto">
+            {channels.map(([Ico, title, body, href]) => (
+              <Card key={title} className="glass rounded-2xl p-6">
+                <Ico className="h-7 w-7 text-white mb-3" aria-hidden />
                 <h2 className="mb-2 text-lg font-bold text-white">{title}</h2>
                 <p className="text-sm leading-relaxed text-slate-400">{body}</p>
                 {href && (
-                  <Link href={href as string} className="mt-4 inline-block text-sm font-semibold text-white hover:underline">
-                    {String(title) === 'Email' ? 'Email us →' : 'Open →'}
+                  <Link href={href} className="mt-4 inline-block text-sm font-semibold text-white hover:underline">
+                    {title === 'Email' ? 'Email us →' : 'Open →'}
                   </Link>
                 )}
               </Card>

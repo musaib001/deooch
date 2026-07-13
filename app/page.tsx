@@ -17,8 +17,8 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Deooch — Done-For-You AI Automation for Any Business Process',
-  description: 'Berlin-based, GDPR-compliant AI automation for SMBs. We build AI agents that run your repetitive workflows end to end — invoicing, marketing, operations, or any custom process. Clients save 28+ hours/month at 99%+ accuracy. Free working demo of your process.',
+  title: 'Deooch — Done-For-You AI Automation Agency for Any Business Process',
+  description: 'Berlin-based, GDPR-compliant AI automation agency for SMBs. We build AI agents that run your repetitive workflows end to end — invoicing, marketing & sales ops, logistics, or any custom process. Clients save 28+ hours/month at 99%+ accuracy. Free working demo of your process.',
 };
 
 const steps = [
