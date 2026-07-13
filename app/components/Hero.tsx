@@ -90,8 +90,6 @@ function CountUp({
 }
 
 export default function Hero() {
-  const reduce = useReducedMotion();
-
   return (
     <section className="relative overflow-hidden px-4 py-28">
       <AmbientGlow />
@@ -102,18 +100,6 @@ export default function Hero() {
         animate="show"
         className="relative mx-auto max-w-5xl text-center"
       >
-        <motion.div variants={item} className="mb-6 flex justify-center">
-          <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm text-slate-300">
-            <span className="relative flex h-2 w-2">
-              {!reduce && (
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
-              )}
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
-            </span>
-            Now taking new clients · Berlin-based
-          </span>
-        </motion.div>
-
         {/* LCP content — rendered visible on the server, not gated behind JS/hydration */}
         <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-7xl">
           AI Automation That <span className="text-gradient">Pays For Itself</span> in Weeks
