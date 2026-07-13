@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CaseStudyCard from '../components/CaseStudyCard';
-import { ScanText, Megaphone, CreditCard, Mail, ClipboardList, BarChart3 } from 'lucide-react';
+import { ReceiptText, ScanText, Megaphone, CreditCard, Mail, ClipboardList, BarChart3 } from 'lucide-react';
 
 export const metadata = {
   title: 'Case Studies — AI Automation Results | Deooch',
@@ -29,7 +29,9 @@ export default function CaseStudies() {
       <section className="px-4 pb-12">
         <div className="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-12 border-white/15">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center text-3xl">📄</div>
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center">
+              <ReceiptText className="h-7 w-7 text-white" aria-hidden />
+            </div>
             <div>
               <h2 className="text-2xl font-bold text-white">Invoice-to-Accounting Automation</h2>
               <p className="text-white">B2B SaaS company · Berlin · 45 employees</p>
@@ -71,6 +73,13 @@ export default function CaseStudies() {
               <p className="text-slate-400 text-xs mt-1">to go live</p>
             </div>
           </div>
+
+          <Link
+            href="/blog/automate-invoice-processing-without-hiring"
+            className="mt-6 inline-block text-sm font-semibold text-white hover:underline"
+          >
+            Read the full step-by-step guide to this build →
+          </Link>
         </div>
       </section>
 

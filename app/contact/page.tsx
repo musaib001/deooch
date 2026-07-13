@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Mail, MapPin, CheckCircle2 } from 'lucide-react';
 
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -45,6 +46,11 @@ export default function Contact() {
           <p className="text-xl text-gray-400">
             Tell us where your team is losing time. We&apos;ll reply within 24 hours.
           </p>
+          <p className="mt-4 max-w-2xl mx-auto text-gray-400">
+            Whether it&apos;s invoicing, marketing and sales ops, logistics paperwork, or a process unique to your
+            business — describe it below and we&apos;ll tell you honestly whether AI automation is a fit, what it
+            would take to build, and roughly what it costs before any commitment.
+          </p>
         </div>
       </section>
 
@@ -53,21 +59,21 @@ export default function Contact() {
           {/* Info column */}
           <div className="md:col-span-2 space-y-8">
             <div>
-              <div className="text-3xl mb-2">📧</div>
+              <Mail className="h-7 w-7 text-white mb-2" aria-hidden />
               <h3 className="text-lg font-bold mb-1">Email</h3>
               <a href="mailto:hello@deooch.com" className="text-white hover:text-white">hello@deooch.com</a>
             </div>
             <div>
-              <div className="text-3xl mb-2">🌍</div>
+              <MapPin className="h-7 w-7 text-white mb-2" aria-hidden />
               <h3 className="text-lg font-bold mb-1">Location</h3>
               <p className="text-gray-400">Berlin, Germany</p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
               <h3 className="font-bold mb-3">What to expect</h3>
               <ul className="space-y-3 text-gray-300 text-sm">
-                <li className="flex gap-2"><span className="text-white">✓</span> No pressure — just a conversation about your workflow.</li>
-                <li className="flex gap-2"><span className="text-white">✓</span> We suggest automation ideas and rough timelines.</li>
-                <li className="flex gap-2"><span className="text-white">✓</span> You decide. No obligation.</li>
+                <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-white flex-shrink-0 mt-0.5" aria-hidden /> No pressure — just a conversation about your workflow.</li>
+                <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-white flex-shrink-0 mt-0.5" aria-hidden /> We suggest automation ideas and rough timelines.</li>
+                <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-white flex-shrink-0 mt-0.5" aria-hidden /> You decide. No obligation.</li>
               </ul>
             </div>
           </div>
@@ -77,7 +83,7 @@ export default function Contact() {
             <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8">
               {status === 'sent' ? (
                 <div className="text-center py-12">
-                  <div className="text-5xl mb-4">✅</div>
+                  <CheckCircle2 className="h-12 w-12 text-white mb-4 mx-auto" aria-hidden />
                   <h3 className="text-2xl font-bold mb-2">Message sent!</h3>
                   <p className="text-gray-400">Thanks for reaching out. We&apos;ll get back to you at the email you provided within 24 hours.</p>
                 </div>

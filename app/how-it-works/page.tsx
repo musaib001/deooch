@@ -120,22 +120,24 @@ export default function HowItWorks() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Guarantees</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="glass rounded-2xl p-6">
-              <div className="text-3xl mb-3">🎯</div>
-              <h3 className="font-bold text-white mb-2">Results or Money Back</h3>
+            <div className="glass rounded-2xl p-6 border-t-2 border-t-white/20">
+              <h3 className="text-lg font-bold text-white mb-2">Results or Money Back</h3>
               <p className="text-slate-400 text-sm">If the automation doesn&apos;t hit the agreed targets within 30 days, we fix it at no extra cost — or you don&apos;t pay.</p>
             </div>
-            <div className="glass rounded-2xl p-6">
-              <div className="text-3xl mb-3">📊</div>
-              <h3 className="font-bold text-white mb-2">99%+ Accuracy</h3>
+            <div className="glass rounded-2xl p-6 border-t-2 border-t-white/20">
+              <h3 className="text-lg font-bold text-white mb-2">99%+ Accuracy</h3>
               <p className="text-slate-400 text-sm">Every automation is built to human-level reliability, with uncertain cases flagged for review rather than guessed.</p>
             </div>
-            <div className="glass rounded-2xl p-6">
-              <div className="text-3xl mb-3">🔒</div>
-              <h3 className="font-bold text-white mb-2">Data Security</h3>
+            <div className="glass rounded-2xl p-6 border-t-2 border-t-white/20">
+              <h3 className="text-lg font-bold text-white mb-2">Data Security</h3>
               <p className="text-slate-400 text-sm">Encryption in transit and at rest. We work within your systems and follow GDPR practices — your data stays yours.</p>
             </div>
           </div>
+          <p className="text-center mt-8">
+            <Link href="/blog/automate-invoice-processing-without-hiring" className="text-sm font-semibold text-white hover:underline">
+              See this process applied to a real invoice automation build →
+            </Link>
+          </p>
         </div>
       </section>
 

@@ -26,6 +26,12 @@ export default function Blog() {
             <p className="mt-4 max-w-2xl text-lg text-slate-400">
               Practical, no-fluff writing on automating the repetitive back-office work that eats your team&apos;s time.
             </p>
+            <p className="mt-4 max-w-2xl text-slate-400">
+              We cover the workflows we build every day: invoice and document processing, marketing and sales ops,
+              logistics paperwork, and healthcare admin — plus honest comparisons of when a done-for-you automation
+              makes more sense than a DIY tool like Zapier or Make. Written by the team that actually builds and
+              runs these automations for clients, not generic AI-generated listicles.
+            </p>
           </Reveal>
 
           <Stagger className="mt-12 space-y-5">
