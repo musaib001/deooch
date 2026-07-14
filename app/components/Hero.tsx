@@ -36,9 +36,9 @@ const stats = [
 function AmbientGlow() {
   const reduce = useReducedMotion();
   const blobs = [
-    { className: 'left-[8%] top-[12%] h-72 w-72 bg-white/20', x: [0, 40, 0], y: [0, 30, 0] },
-    { className: 'right-[10%] top-[20%] h-80 w-80 bg-white/10', x: [0, -30, 0], y: [0, 40, 0] },
-    { className: 'left-1/2 bottom-[5%] h-64 w-64 bg-white/10', x: [0, 20, 0], y: [0, -30, 0] },
+    { className: 'left-[8%] top-[12%] h-72 w-72 bg-[#7c5cff]/25', x: [0, 40, 0], y: [0, 30, 0] },
+    { className: 'right-[10%] top-[20%] h-80 w-80 bg-[#22d3ee]/20', x: [0, -30, 0], y: [0, 40, 0] },
+    { className: 'left-1/2 bottom-[5%] h-64 w-64 bg-[#f5871f]/20', x: [0, 20, 0], y: [0, -30, 0] },
   ];
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">

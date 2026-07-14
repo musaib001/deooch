@@ -75,7 +75,7 @@ export default function Pricing() {
               } transition-colors`}
             >
               {t.highlight && (
-                <span className="self-start mb-3 text-xs font-semibold uppercase tracking-wide bg-white text-black rounded-full px-3 py-1">
+                <span className="self-start mb-3 text-xs font-semibold uppercase tracking-wide bg-[#f5871f] text-[#1a1206] rounded-full px-3 py-1">
                   Most popular
                 </span>
               )}

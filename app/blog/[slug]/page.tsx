@@ -75,7 +75,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <p className="mt-2 text-slate-400">Send us one real process and we&apos;ll build a free working demo.</p>
             <Link
               href="/contact"
-              className="mt-5 inline-block rounded-lg bg-white px-6 py-3 font-semibold text-black transition hover:bg-neutral-200"
+              className="mt-5 inline-block rounded-lg bg-[#f5871f] px-6 py-3 font-semibold text-[#1a1206] transition hover:bg-[#ff9a33]"
             >
               Get a Free Demo
             </Link>

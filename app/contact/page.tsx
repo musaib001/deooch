@@ -35,12 +35,12 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
+    <div className="min-h-screen text-white">
       <Header />
 
       <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-[#7c5cff]/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-[#22d3ee]/12 rounded-full blur-3xl" />
         <div className="relative max-w-5xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">Let&apos;s Talk</h1>
           <p className="text-xl text-gray-400">
@@ -113,7 +113,7 @@ export default function Contact() {
                   {status === 'error' && <p className="text-red-400 text-sm">{error}</p>}
 
                   <button type="submit" disabled={status === 'sending'}
-                    className="w-full bg-white hover:bg-neutral-200 text-black disabled:opacity-60 font-semibold px-8 py-4 rounded-lg transition shadow-lg shadow-black/40">
+                    className="w-full bg-[#f5871f] hover:bg-[#ff9a33] text-[#1a1206] disabled:opacity-60 font-semibold px-8 py-4 rounded-lg transition shadow-lg shadow-black/40">
                     {status === 'sending' ? 'Sending…' : 'Send Message'}
                   </button>
                   <p className="text-xs text-gray-500 text-center">A booking calendar is coming soon. For now, drop us a message.</p>

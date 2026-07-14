@@ -136,7 +136,7 @@ export default function About() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-white hover:bg-neutral-200 text-black font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-black/40"
+              className="inline-block bg-[#f5871f] hover:bg-[#ff9a33] text-[#1a1206] font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-black/40"
             >
               Schedule a Call
             </Link>

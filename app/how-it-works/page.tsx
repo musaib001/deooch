@@ -147,7 +147,7 @@ export default function HowItWorks() {
           <p className="text-xl mb-8 text-slate-300">Book a free discovery call and we&apos;ll map your first automation.</p>
           <Link
             href="/contact"
-            className="inline-block bg-white hover:bg-neutral-200 text-black font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-black/40"
+            className="inline-block bg-[#f5871f] hover:bg-[#ff9a33] text-[#1a1206] font-bold px-8 py-4 rounded-lg transition text-lg shadow-lg shadow-black/40"
           >
             Schedule Your Free Consultation
           </Link>

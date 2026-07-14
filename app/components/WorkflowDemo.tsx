@@ -198,7 +198,7 @@ export default function WorkflowDemo() {
           <button
             onClick={run}
             disabled={running}
-            className="bg-white hover:bg-neutral-200 disabled:opacity-60 text-black font-semibold px-6 py-3 rounded-lg transition shadow-lg shadow-black/40 whitespace-nowrap"
+            className="bg-[#f5871f] hover:bg-[#ff9a33] disabled:opacity-60 text-[#1a1206] font-semibold px-6 py-3 rounded-lg transition shadow-lg shadow-black/40 whitespace-nowrap"
           >
             {running ? 'Running…' : '▶ Run Automation'}
           </button>

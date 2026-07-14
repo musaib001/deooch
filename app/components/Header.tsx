@@ -3,9 +3,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import ProductsMenu from './ProductsMenu';
 
 const links = [
   { href: '/solutions', label: 'Solutions' },
+  { href: '/products', label: 'Products' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/case-studies', label: 'Case Studies' },
   { href: '/blog', label: 'Blog' },
@@ -26,12 +28,16 @@ export default function Header() {
 
           {/* Desktop nav */}
           <div className="hidden md:flex gap-8 items-center">
-            {links.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-white transition">
-                {l.label}
-              </Link>
-            ))}
-            <Link href="/contact" className="bg-white hover:bg-neutral-200 text-black px-6 py-2 rounded-lg transition">
+            {links.map((l) =>
+              l.href === '/products' ? (
+                <ProductsMenu key={l.href} />
+              ) : (
+                <Link key={l.href} href={l.href} className="hover:text-white transition">
+                  {l.label}
+                </Link>
+              )
+            )}
+            <Link href="/contact" className="bg-[#f5871f] hover:bg-[#ff9a33] text-[#1a1206] px-6 py-2 rounded-lg transition">
               Get Started
             </Link>
           </div>
@@ -70,7 +76,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 bg-white hover:bg-neutral-200 text-black px-4 py-3 rounded-lg text-center font-semibold transition"
+              className="mt-2 bg-[#f5871f] hover:bg-[#ff9a33] text-[#1a1206] px-4 py-3 rounded-lg text-center font-semibold transition"
             >
               Get Started
             </Link>

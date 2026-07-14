@@ -1,12 +1,15 @@
 import type { MetadataRoute } from 'next';
 import { posts } from './blog/posts';
 import { solutions } from './data/solutions';
+import { productCategories } from './data/product-categories';
 
 const base = 'https://www.deooch.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
+    '/products',
+    ...productCategories.map((c) => `/products/${c.slug}`),
     '/solutions',
     ...solutions.filter((s) => s.slug).map((s) => `/solutions/${s.slug}`),
     '/how-it-works',

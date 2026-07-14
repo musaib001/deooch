@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="440" viewBox="0 0 680 440" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0c1e"/>
+      <stop offset="1" stop-color="#0a0a18"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.1" r="0.9">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.22"/>
+      <stop offset="0.6" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="680" height="440" rx="20" fill="url(#bg)"/>
+  <rect width="680" height="440" rx="20" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="679" height="439" rx="20" stroke="rgba(255,255,255,0.09)"/>
+  <!-- window chrome -->
+  <circle cx="30" cy="30" r="5" fill="#3a3a55"/><circle cx="48" cy="30" r="5" fill="#3a3a55"/><circle cx="66" cy="30" r="5" fill="#3a3a55"/>
+  <text x="652" y="35" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#7b7b98">PHARMACY</text>
+  <line x1="0" y1="60" x2="680" y2="60" stroke="rgba(255,255,255,0.09)"/>
+  <text x="40" y="88" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#7b7b98">Stock levels</text>
+    <rect x="500" y="74" width="140" height="22" rx="7" fill="#34d399" fill-opacity="0.16"/><text x="570" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#34d399">Auto-reorder ✓</text>
+    <text x="40" y="143" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e9e9f6">Amoxicillin 500mg</text>
+      <rect x="300" y="127" width="300" height="14" rx="7" fill="#20203c" fill-opacity="1"/>
+      <rect x="300" y="127" width="245.99999999999997" height="14" rx="7" fill="#34d399" fill-opacity="1"/>
+      <text x="615" y="143" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#7b7b98">82%</text><text x="40" y="189" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e9e9f6">Ibuprofen 200mg</text>
+      <rect x="300" y="173" width="300" height="14" rx="7" fill="#20203c" fill-opacity="1"/>
+      <rect x="300" y="173" width="135" height="14" rx="7" fill="#34d399" fill-opacity="1"/>
+      <text x="615" y="189" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#7b7b98">45%</text><text x="40" y="235" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e9e9f6">Paracetamol 1g</text>
+      <rect x="300" y="219" width="300" height="14" rx="7" fill="#20203c" fill-opacity="1"/>
+      <rect x="300" y="219" width="54" height="14" rx="7" fill="#fb7185" fill-opacity="1"/>
+      <text x="615" y="235" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#fb7185">LOW</text><text x="40" y="281" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#e9e9f6">Insulin (vials)</text>
+      <rect x="300" y="265" width="300" height="14" rx="7" fill="#20203c" fill-opacity="1"/>
+      <rect x="300" y="265" width="189" height="14" rx="7" fill="#34d399" fill-opacity="1"/>
+      <text x="615" y="281" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#7b7b98">63%</text>
+    <rect x="40" y="300" width="600" height="96" rx="12" fill="#14142e" fill-opacity="1"/>
+    <rect x="56" y="320" width="30" height="30" rx="8" fill="#fb7185" fill-opacity="0.18"/><text x="71" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#fb7185">!</text>
+    <text x="104" y="332" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#e9e9f6">Paracetamol 1g below threshold</text>
+    <text x="104" y="356" text-anchor="start" font-family="Arial, sans-serif" font-size="12.5" font-weight="500" fill="#7b7b98">Reorder of 500 units placed automatically</text>
+</svg>

@@ -13,15 +13,14 @@
 }
 
 body {
-  color: #e5e5e5;
+  color: #e6e6f0;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-  /* Stark monochrome: near-black with a single soft white glow + faint neutral grid */
-  background-color: #050505;
+  /* Spectrum: deep indigo ground with violet / cyan / orange ambient light */
+  background-color: #0a0a16;
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 255, 255, 0.06), transparent),
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: auto, 44px 44px, 44px 44px;
+    radial-gradient(60% 45% at 85% -5%, rgba(124, 92, 255, 0.20), transparent),
+    radial-gradient(50% 40% at 8% 8%, rgba(34, 211, 238, 0.12), transparent),
+    radial-gradient(70% 55% at 50% 115%, rgba(245, 135, 31, 0.12), transparent);
   background-attachment: fixed;
 }
 
@@ -55,9 +54,9 @@ body {
 .blog-body li { color: #cfcfcf; margin: 0.35rem 0; }
 .blog-body em { color: #fff; font-style: italic; }
 
-/* monochrome accent text — subtle white-to-grey sheen */
+/* Spectrum accent text — orange to violet */
 .text-gradient {
-  background: linear-gradient(90deg, #ffffff, #b5b5b5);
+  background: linear-gradient(100deg, #f5871f, #a78bfa);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
