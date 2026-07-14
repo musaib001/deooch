@@ -13,6 +13,7 @@ import {
 } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import HeroFlow from './HeroFlow';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -136,6 +137,10 @@ export default function Hero() {
           send us one real process and we&apos;ll automate it for a live demo —{' '}
           <span className="text-white">free of cost</span>, no commitment.
         </motion.p>
+
+        <motion.div variants={item}>
+          <HeroFlow />
+        </motion.div>
 
         <motion.div
           variants={item}
