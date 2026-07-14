@@ -17,16 +17,21 @@ export default function ProductsMenu() {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <button
-        type="button"
-        className="flex items-center gap-1 hover:text-white transition"
-        aria-expanded={open}
-        aria-haspopup="true"
-        onClick={() => setOpen((o) => !o)}
-      >
-        Products
-        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden />
-      </button>
+      <div className="flex items-center gap-1">
+        <Link href="/products" className="hover:text-white transition">
+          Products
+        </Link>
+        <button
+          type="button"
+          className="hover:text-white transition"
+          aria-expanded={open}
+          aria-haspopup="true"
+          aria-label="Toggle products menu"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden />
+        </button>
+      </div>
 
       {open && (
         // pt-4 bridges the gap so the panel stays open while the cursor moves down onto it
@@ -35,6 +40,12 @@ export default function ProductsMenu() {
             {/* Category rail */}
             <div className="w-56 flex-shrink-0 border-r border-white/10 p-3 bg-white/[0.02]">
               <p className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Categories</p>
+              <Link
+                href="/products"
+                className="w-full flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-sm font-semibold text-white hover:bg-white/5 transition"
+              >
+                All Products
+              </Link>
               {productCategories.map((c, i) => (
                 <Link
                   key={c.slug}
