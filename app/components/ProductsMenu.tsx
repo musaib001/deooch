@@ -46,6 +46,15 @@ export default function ProductsMenu() {
               >
                 All Products
               </Link>
+              <a
+                href="https://forms.deooch.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-sm font-semibold text-white hover:bg-white/5 transition"
+              >
+                <span className="h-2 w-2 rounded-full flex-shrink-0 bg-[#f5871f]" />
+                deoochform ↗
+              </a>
               {productCategories.map((c, i) => (
                 <Link
                   key={c.slug}

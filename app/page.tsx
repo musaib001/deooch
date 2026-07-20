@@ -12,6 +12,7 @@ import LogoMarquee from './components/LogoMarquee';
 import Pricing from './components/Pricing';
 import Icon from './components/Icon';
 import ProductSuite from './components/ProductSuite';
+import FeaturedForms from './components/FeaturedForms';
 import {
   Zap, Brain, Share2, UserCheck, Clock, ShieldCheck, TrendingDown,
   Lock, FileText, ReceiptText, ScanText, Truck,
@@ -276,6 +277,9 @@ export default function Home() {
           </Stagger>
         </div>
       </section>
+
+      {/* deoochform — our own live SaaS product */}
+      <FeaturedForms />
 
       {/* Product suite — hospital operations */}
       <ProductSuite />

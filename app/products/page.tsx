@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Reveal, Stagger, Card } from '../components/Motion';
 import { productCategories } from '../data/product-categories';
+import FeaturedForms from '../components/FeaturedForms';
 
 const SITE = 'https://www.deooch.com';
 
@@ -46,6 +47,8 @@ export default function Products() {
           </p>
         </Reveal>
       </section>
+
+      <FeaturedForms />
 
       <section className="px-4 pb-12">
         <div className="mx-auto max-w-6xl">
